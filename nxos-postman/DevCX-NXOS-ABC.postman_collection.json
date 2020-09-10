@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "29a6674e-6b65-4869-81cb-a4540cf21fe7",
+		"name": "DevCX-NXOS-ABC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01.Authentication",
+			"item": [
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"aaaUser\" : {\n    \"attributes\" : {\n      \"name\" : \"{{username}}\",\n      \"pwd\" : \"{{password}}\"\n    }\n  }\n}\n"
+						},
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/aaaLogin.json",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"aaaLogin.json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "02.Interfaces",
+			"item": [
+				{
+					"name": "Get Interface",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/mo/sys/intf/phys-[eth1/1].json",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"mo",
+								"sys",
+								"intf",
+								"phys-[eth1",
+								"1].json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Configure L2 Interface",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topSystem\": {\n        \"children\": [\n            {\n                \"bdEntity\": {\n                    \"children\": [\n                        {\n                            \"l2BD\": {\n                                \"attributes\": {\n                                    \"fabEncap\": \"vlan-105\"\n                                }\n                            }\n                        }\n                    ]\n                }\n            },\n            {\n                \"interfaceEntity\": {\n                    \"children\": [\n                        {\n                            \"l1PhysIf\": {\n                                \"attributes\": {\n                                    \"id\": \"eth1/5\"\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/mo/sys.json",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"mo",
+								"sys.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Configure L3 Interface",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topSystem\": {\n        \"children\": [\n            {\n                \"ipv4Entity\": {\n                    \"children\": [\n                        {\n                            \"ipv4Inst\": {\n                                \"children\": [\n                                    {\n                                        \"ipv4Dom\": {\n                                            \"attributes\": {\n                                                \"name\": \"default\"\n                                            },\n                                            \"children\": [\n                                                {\n                                                    \"ipv4If\": {\n                                                        \"attributes\": {\n                                                            \"id\": \"eth1/5\"\n                                                        },\n                                                        \"children\": [\n                                                            {\n                                                                \"ipv4Addr\": {\n                                                                    \"attributes\": {\n                                                                        \"addr\": \"1.1.1.1/24\"\n                                                                    }\n                                                                }\n                                                            }\n                                                        ]\n                                                    }\n                                                }\n                                            ]\n                                        }\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            },\n            {\n                \"interfaceEntity\": {\n                    \"children\": [\n                        {\n                            \"l1PhysIf\": {\n                                \"attributes\": {\n                                    \"id\": \"eth1/5\",\n                                    \"layer\": \"Layer3\",\n                                    \"userCfgdFlags\": \"admin_layer\"\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/mo/sys.json",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"mo",
+								"sys.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Interface - Physical",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/mo/sys/intf/phys-[eth1/1]/phys.json?query-target=children",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"mo",
+								"sys",
+								"intf",
+								"phys-[eth1",
+								"1]",
+								"phys.json"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "children"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "03.VLANs",
+			"item": [
+				{
+					"name": "Get VLAN - Children",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/node/mo/sys/bd/bd-[vlan-101].json?query-target=children",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"bd",
+								"bd-[vlan-101].json"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "children"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get VLAN - Self",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/node/mo/sys/bd/bd-[vlan-102].json?query-target=self",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"bd",
+								"bd-[vlan-102].json"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "self"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create VLAN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topSystem\": {\n        \"children\": [\n            {\n                \"bdEntity\": {\n                    \"children\": [\n                        {\n                            \"l2BD\": {\n                                \"attributes\": {\n                                    \"fabEncap\": \"vlan-300\",\n                                    \"name\": \"TEST-Postman\"\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/mo/sys.json",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"mo",
+								"sys.json"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "04.Misc",
+			"item": [
+				{
+					"name": "Show Version",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/node/mo/sys/showversion.json",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"showversion.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Boot Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/node/mo/sys/boot.json?query-target=children",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"node",
+								"mo",
+								"sys",
+								"boot.json"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "children"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/mo/sys.json",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"mo",
+								"sys.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sys - Children",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{nxos_ip}}:{{port}}/api/mo/sys.json?query-target=children",
+							"protocol": "https",
+							"host": [
+								"{{nxos_ip}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"api",
+								"mo",
+								"sys.json"
+							],
+							"query": [
+								{
+									"key": "query-target",
+									"value": "children"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
