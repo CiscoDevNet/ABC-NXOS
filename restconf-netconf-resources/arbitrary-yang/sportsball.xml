@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<data xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<FootballTeam xmlns="http://sportsball">
+		<TeamName />
+		<Player><PlayerName />
+			<Position />
+			<Age />
+		</Player>
+	</FootballTeam>
+</data>

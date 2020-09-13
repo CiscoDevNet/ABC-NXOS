@@ -1,0 +1,23 @@
+module sportsball {
+ namespace "http://sportsball";
+ prefix sportsball;
+
+container FootballTeam {
+
+ leaf TeamName {
+  type string;
+ }
+ list Player {
+   key PlayerName;
+   leaf PlayerName {
+   type string;
+  }
+  leaf Position {
+   type string;
+  }
+  leaf Age {
+   type uint8;
+  }
+ }
+}
+}

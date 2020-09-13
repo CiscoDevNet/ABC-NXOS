@@ -1,0 +1,28 @@
+module ntp-server {
+  namespace "http://com/example/ntpserver";
+  prefix ntp-server;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  list ntp-server {
+    key ntp-server-ip;
+
+    uses ncs:service-data;
+    ncs:servicepoint "ntp-server";
+
+    leaf ntp-server-ip {
+      type inet:ipv4-address;
+    }
+
+    leaf-list device {
+      type leafref {
+        path "/ncs:devices/ncs:device/ncs:name";
+      }
+    }
+  }
+}

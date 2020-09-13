@@ -1,0 +1,559 @@
+{
+	"info": {
+		"_postman_id": "894da769-b865-4650-999b-0cd81f776288",
+		"name": "ABC - N9K RESTCONF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Top Level System",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Hostname",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/name",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. VLAN BDs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/bd-items/bd-items/",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"bd-items",
+						"bd-items",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Mgmt0 IP Physical Stats",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/mgmt-items/MgmtIf-list=mgmt0",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"mgmt-items",
+						"MgmtIf-list=mgmt0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Mgmt0 IP Address",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=management/if-items/If-list=mgmt0/addr-items/",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"ipv4-items",
+						"inst-items",
+						"dom-items",
+						"Dom-list=management",
+						"if-items",
+						"If-list=mgmt0",
+						"addr-items",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Mgmt0 CDP Neighbors",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/cdp-items/inst-items/if-items/If-list=mgmt0",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"cdp-items",
+						"inst-items",
+						"if-items",
+						"If-list=mgmt0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. Mgmt0 IPv4 Routes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=management/rt-items/",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"ipv4-items",
+						"inst-items",
+						"dom-items",
+						"Dom-list=management",
+						"rt-items",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. RESTCONF Challenge #1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=default/if-items/If-list=eth1%2F10/addr-items",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"ipv4-items",
+						"inst-items",
+						"dom-items",
+						"Dom-list=default",
+						"if-items",
+						"If-list=eth1%2F10",
+						"addr-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. RESTCONF Challenge #2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=RESTCONF_TEST/if-items/If-list=eth1%2F10/addr-items",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"ipv4-items",
+						"inst-items",
+						"dom-items",
+						"Dom-list=RESTCONF_TEST",
+						"if-items",
+						"If-list=eth1%2F10",
+						"addr-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12. RESTCONF Challenge #3",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"ipv4-items\": {\n      \"inst-items\": {\n        \"dom-items\": {\n          \"Dom-list\": [\n            {\n              \"name\": \"default\",\n              \"if-items\": {\n                \"If-list\": [\n                  {\n                    \"id\": \"lo150\",\n                    \"addr-items\": {\n                      \"Addr-list\": [\n                        {\n                          \"addr\": \"6.6.6.6/32\",\n                          \"pref\": \"0\",\n                          \"tag\": \"0\",\n                          \"type\": \"primary\"\n                        }\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    },\n    \"intf-items\": {\n      \"lb-items\": {\n        \"LbRtdIf-list\": [\n          {\n            \"descr\": \"RESTCONF_LOOPBACK\",\n            \"id\": \"lo150\"\n          }\n        ]\n      }\n    }\n  }"
+				},
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "13. RESTCONF Challenge #4",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/yang.data+json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/yang.data+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"intf-items\": {\n      \"lb-items\": {\n        \"LbRtdIf-list\": [\n          {\n            \"id\": \"lo150\",\n            \"rtvrfMbr-items\": {\n              \"tDn\": \"/System/inst-items/Inst-list[name='RESTCONF_TEST']\"\n            }\n          }\n        ]\n      }\n    },\n    \"ipv4-items\": {\n      \"inst-items\": {\n        \"dom-items\": {\n          \"Dom-list\": [\n            {\n              \"name\": \"default\",\n              \"if-items\": {\n                \"If-list\": [\n                  {\n                    \"id\": \"lo150\",\n                    \"addr-items\": {\n                      \"Addr-list\": [\n                        {\n                          \"addr\": \"6.6.6.6/32\",\n                          \"pref\": \"0\",\n                          \"tag\": \"0\",\n                          \"type\": \"primary\"\n                        }\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    }\n  }"
+				},
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "14. RESTCONF Challenge #5 (Part 1)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/yang.data+json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/yang.data+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"LbRtdIf-list\": [\n          {\n            \"id\": \"lo151\"\n          }\n        ]\n    }"
+				},
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/intf-items/lb-items/",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"intf-items",
+						"lb-items",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "15. RESTCONF Challenge #5 (Part 2)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/yang.data+json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/yang.data+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"addr-items\": {\n        \"Addr-list\": [\n        {\n            \"addr\": \"7.7.7.7/32\",\n            \"pref\": \"0\",\n            \"tag\": \"0\",\n            \"type\": \"primary\"\n            }\n            ]\n         }\n    }"
+				},
+				"url": {
+					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=default/if-items/If-list=lo151/",
+					"protocol": "http",
+					"host": [
+						"{{switch}}"
+					],
+					"port": "{{http_port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"ipv4-items",
+						"inst-items",
+						"dom-items",
+						"Dom-list=default",
+						"if-items",
+						"If-list=lo151",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{username}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7a3d8f40-24ed-4327-880e-631430ed4c1c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d98a1db3-5af4-4bfd-9435-bbfacdb4357c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

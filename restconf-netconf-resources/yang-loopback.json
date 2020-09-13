@@ -1,0 +1,40 @@
+{  
+    "ipv4-items": {
+      "inst-items": {
+        "dom-items": {
+          "Dom-list": [
+            {
+              "name": "default",
+              "if-items": {
+                "If-list": [
+                  {
+                    "id": "lo100",
+                    "addr-items": {
+                      "Addr-list": [
+                        {
+                          "addr": "1.1.1.1/32",
+                          "pref": "0",
+                          "tag": "0",
+                          "type": "primary"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "intf-items": {
+      "lb-items": {
+        "LbRtdIf-list": [
+          {
+            "descr": "TESTING USING RESTCONF",
+            "id": "lo100"
+          }
+        ]
+      }
+    }
+  }

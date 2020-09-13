@@ -1,0 +1,60 @@
+{
+  "topSystem": {
+    "children": [
+      {
+        "ipv4Entity": {
+          "children": [
+            {
+              "ipv4Inst": {
+                "children": [
+                  {
+                    "ipv4Dom": {
+                      "attributes": {
+                        "name": "default"
+                      },
+                      "children": [
+                        {
+                          "ipv4If": {
+                            "attributes": {
+                              "id": "lo100"
+                            },
+                            "children": [
+                              {
+                                "ipv4Addr": {
+                                  "attributes": {
+                                    "addr": "1.1.1.1/32",
+                                    "pref": "0",
+                                    "tag": "0",
+                                    "type": "primary"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "interfaceEntity": {
+          "children": [
+            {
+              "l3LbRtdIf": {
+                "attributes": {
+                  "descr": "TESTING USING DME-REST",
+                  "id": "lo100"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

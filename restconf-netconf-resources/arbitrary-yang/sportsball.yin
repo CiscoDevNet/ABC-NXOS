@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="sportsball"
+        xmlns="urn:ietf:params:xml:ns:yang:yin:1"
+        xmlns:sportsball="http://sportsball">
+  <namespace uri="http://sportsball"/>
+  <prefix value="sportsball"/>
+  <container name="FootballTeam">
+    <leaf name="TeamName">
+      <type name="string"/>
+    </leaf>
+    <list name="Player">
+      <key value="PlayerName"/>
+      <leaf name="PlayerName">
+        <type name="string"/>
+      </leaf>
+      <leaf name="Position">
+        <type name="string"/>
+      </leaf>
+      <leaf name="Age">
+        <type name="uint8"/>
+      </leaf>
+    </list>
+  </container>
+</module>
