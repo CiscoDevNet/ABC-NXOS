@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  vars:
+    repositories:
+      - { org: 'CiscoDevNet', repo: 'pydme' }
+    virtualenv: py3venv
+  
+  tasks:
+
+  - name: Clone code into directory
+    git:
+      repo: "https://github.com/{{ item.org }}/{{ item.repo }}.git"
+      dest: "{{ ansible_env.HOME }}/{{ item.repo }}"
+    with_items: "{{ repositories }}"
+
+  - name: Install pyDME
+    shell: python setup.py install
+    args:
+      chdir: "{{ ansible_env.HOME }}/{{ item }}"
+    with_items:
+      - pydme
+
+  - name: Install ABC requirements
+    pip: 
+      requirements: "{{ playbook_dir }}/requirements.txt"
+      virtualenv: "{{ ansible_env.HOME }}/{{ virtualenv }}"
