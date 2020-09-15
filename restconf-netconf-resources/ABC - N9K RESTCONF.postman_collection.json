@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "894da769-b865-4650-999b-0cd81f776288",
+		"_postman_id": "9b225740-c867-4330-ae74-355129517b58",
 		"name": "ABC - N9K RESTCONF",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -37,12 +37,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -69,12 +69,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/name",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/name",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -102,12 +102,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/bd-items/bd-items/",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/bd-items/bd-items/",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -137,12 +137,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/mgmt-items/MgmtIf-list=mgmt0",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/mgmt-items/MgmtIf-list=mgmt0",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -171,12 +171,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=management/if-items/If-list=mgmt0/addr-items/",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=management/if-items/If-list=mgmt0/addr-items/",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -226,12 +226,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/cdp-items/inst-items/if-items/If-list=mgmt0",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/cdp-items/inst-items/if-items/If-list=mgmt0",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -262,12 +262,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=management/rt-items/",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=management/rt-items/",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -300,12 +300,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=default/if-items/If-list=eth1%2F10/addr-items",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=default/if-items/If-list=eth1%2F10/addr-items",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -339,12 +339,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=RESTCONF_TEST/if-items/If-list=eth1%2F10/addr-items",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=RESTCONF_TEST/if-items/If-list=eth1%2F10/addr-items",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -379,15 +379,15 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{  \n    \"ipv4-items\": {\n      \"inst-items\": {\n        \"dom-items\": {\n          \"Dom-list\": [\n            {\n              \"name\": \"default\",\n              \"if-items\": {\n                \"If-list\": [\n                  {\n                    \"id\": \"lo150\",\n                    \"addr-items\": {\n                      \"Addr-list\": [\n                        {\n                          \"addr\": \"6.6.6.6/32\",\n                          \"pref\": \"0\",\n                          \"tag\": \"0\",\n                          \"type\": \"primary\"\n                        }\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    },\n    \"intf-items\": {\n      \"lb-items\": {\n        \"LbRtdIf-list\": [\n          {\n            \"descr\": \"RESTCONF_LOOPBACK\",\n            \"id\": \"lo150\"\n          }\n        ]\n      }\n    }\n  }"
+					"raw": "{  \n    \"ipv4-items\": {\n      \"inst-items\": {\n        \"dom-items\": {\n          \"Dom-list\": [\n            {\n              \"name\": \"default\",\n              \"if-items\": {\n                \"If-list\": [\n                  {\n                    \"id\": \"lo150\",\n                    \"addr-items\": {\n                      \"Addr-list\": [\n                        {\n                          \"addr\": \"6.6.6.6/32\"\n                        }\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    },\n    \"intf-items\": {\n      \"lb-items\": {\n        \"LbRtdIf-list\": [\n          {\n            \"adminSt\": \"up\",\n            \"descr\": \"RESTCONF_LOOPBACK\",\n            \"id\": \"lo150\"\n          }\n        ]\n      }\n    }\n  }"
 				},
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -416,15 +416,15 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{  \n    \"intf-items\": {\n      \"lb-items\": {\n        \"LbRtdIf-list\": [\n          {\n            \"id\": \"lo150\",\n            \"rtvrfMbr-items\": {\n              \"tDn\": \"/System/inst-items/Inst-list[name='RESTCONF_TEST']\"\n            }\n          }\n        ]\n      }\n    },\n    \"ipv4-items\": {\n      \"inst-items\": {\n        \"dom-items\": {\n          \"Dom-list\": [\n            {\n              \"name\": \"default\",\n              \"if-items\": {\n                \"If-list\": [\n                  {\n                    \"id\": \"lo150\",\n                    \"addr-items\": {\n                      \"Addr-list\": [\n                        {\n                          \"addr\": \"6.6.6.6/32\",\n                          \"pref\": \"0\",\n                          \"tag\": \"0\",\n                          \"type\": \"primary\"\n                        }\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    }\n  }"
+					"raw": "{  \n    \"ipv4-items\": {\n      \"inst-items\": {\n        \"dom-items\": {\n          \"Dom-list\": [\n            {\n              \"name\": \"RESTCONF\",\n              \"if-items\": {\n                \"If-list\": [\n                  {\n                    \"id\": \"lo150\",\n                    \"addr-items\": {\n                      \"Addr-list\": [\n                        {\n                          \"addr\": \"6.6.6.7/32\"\n                        }\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    },\n    \"intf-items\": {\n      \"lb-items\": {\n        \"LbRtdIf-list\": [\n          {\n            \"adminSt\": \"up\",\n            \"descr\": \"RESTCONF_LOOPBACK_VRF\",\n            \"id\": \"lo150\",\n            \"rtvrfMbr-items\": {\n              \"tDn\": \"/System/inst-items/Inst-list[name='RESTCONF']\"\n            }\n          }\n        ]\n      }\n    }\n  }"
 				},
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -456,12 +456,12 @@
 					"raw": "{  \n    \"LbRtdIf-list\": [\n          {\n            \"id\": \"lo151\"\n          }\n        ]\n    }"
 				},
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/intf-items/lb-items/",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/intf-items/lb-items/",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -492,15 +492,15 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{  \n    \"addr-items\": {\n        \"Addr-list\": [\n        {\n            \"addr\": \"7.7.7.7/32\",\n            \"pref\": \"0\",\n            \"tag\": \"0\",\n            \"type\": \"primary\"\n            }\n            ]\n         }\n    }"
+					"raw": "{  \n    \"addr-items\": {\n        \"Addr-list\": [\n        {\n            \"addr\": \"7.7.7.7/32\"\n            }\n            ]\n         }\n    }"
 				},
 				"url": {
-					"raw": "http://{{switch}}:{{http_port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=default/if-items/If-list=lo151/",
-					"protocol": "http",
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=default/if-items/If-list=lo151/",
+					"protocol": "https",
 					"host": [
-						"{{switch}}"
+						"{{nxos_ip}}"
 					],
-					"port": "{{http_port}}",
+					"port": "{{port}}",
 					"path": [
 						"restconf",
 						"data",
@@ -537,7 +537,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7a3d8f40-24ed-4327-880e-631430ed4c1c",
+				"id": "d7938860-5add-40fa-a89f-ec3faf5e41fe",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -547,7 +547,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d98a1db3-5af4-4bfd-9435-bbfacdb4357c",
+				"id": "0ceecad2-016b-439a-96e6-f74bd8ca5182",
 				"type": "text/javascript",
 				"exec": [
 					""
