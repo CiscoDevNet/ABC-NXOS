@@ -1,0 +1,58 @@
+<config>
+  <System xmlns="http://cisco.com/ns/yang/cisco-nx-os-device">
+  {% for interface in interfaces %}
+    <ospf-items>
+    <inst-items>
+      <Inst-list>
+        <name>{{interface.process}}</name>
+        <dom-items>
+          <Dom-list>
+            <name>default</name>
+            <if-items>
+              <If-list>
+                <id>{{interface.name}}</id>
+                <advertiseSecondaries>true</advertiseSecondaries>
+                <area>{{interface.area}}</area>
+              </If-list>
+            </if-items>
+          </Dom-list>
+        </dom-items>
+      </Inst-list>
+    </inst-items>
+  </ospf-items>
+  <ipv4-items>
+    <inst-items>
+      <dom-items>
+        <Dom-list>
+          <name>default</name>
+          <if-items>
+            <If-list>
+              <id>{{interface.name}}</id>
+              <addr-items>
+                <Addr-list>
+                  <addr>{{interface.ip}}</addr>
+                  <pref>0</pref>
+                  <tag>0</tag>
+                  <type>primary</type>
+                </Addr-list>
+              </addr-items>
+            </If-list>
+          </if-items>
+        </Dom-list>
+      </dom-items>
+    </inst-items>
+  </ipv4-items>
+  <intf-items>
+    <phys-items>
+      <PhysIf-list>
+        <id>{{interface.name}}</id>
+        <descr>{{interface.description}}</descr>
+        <adminSt>{{interface.state}}</adminSt>
+        <layer>Layer3</layer>
+        <userCfgdFlags>admin_state,admin_layer</userCfgdFlags>
+      </PhysIf-list>
+    </phys-items>
+  </intf-items>
+  {% endfor %}
+  </System>
+</config>

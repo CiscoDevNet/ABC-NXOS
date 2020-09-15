@@ -1,0 +1,56 @@
+<config>
+  <System xmlns="http://cisco.com/ns/yang/cisco-nx-os-device">
+  {% for loopback in loopbacks %}
+   <ospf-items>
+      <inst-items>
+        <Inst-list>
+          <name>{{loopback.process}}</name>
+          <dom-items>
+            <Dom-list>
+              <name>default</name>
+              <if-items>
+                <If-list>
+                  <id>{{loopback.name}}</id>
+                  <advertiseSecondaries>true</advertiseSecondaries>
+                  <area>{{loopback.area}}</area>
+                </If-list>
+              </if-items>
+            </Dom-list>
+          </dom-items>
+        </Inst-list>
+      </inst-items>
+    </ospf-items>
+    <ipv4-items>
+      <inst-items>
+        <dom-items>
+          <Dom-list>
+            <name>default</name>
+            <if-items>
+              <If-list>
+                <id>{{loopback.name}}</id>
+                <addr-items>
+                  <Addr-list>
+                    <addr>{{loopback.ip}}</addr>
+                    <pref>0</pref>
+                    <tag>0</tag>
+                    <type>primary</type>
+                  </Addr-list>
+                </addr-items>
+              </If-list>
+            </if-items>
+          </Dom-list>
+        </dom-items>
+      </inst-items>
+    </ipv4-items>
+    <intf-items>
+      <lb-items>
+        <LbRtdIf-list>
+          <id>{{loopback.name}}</id>
+          <adminSt>{{loopback.state}}</adminSt>
+          <descr>{{loopback.description}}</descr>
+        </LbRtdIf-list>
+      </lb-items>
+    </intf-items>
+  {% endfor %}
+  </System>
+</config>
