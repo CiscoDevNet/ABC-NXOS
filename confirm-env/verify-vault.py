@@ -20,6 +20,8 @@ if __name__ == "__main__":
 
 
     client = hvac.Client(args.vault, os.getenv("VAULT_TOKEN"))
-    data = client.read("kv-v1/nxos/bootcamp")
+    data = client.read("kv-v1/nxos/bootcamp/nxos-01")
+    logger.info(data)
+    data = client.read("kv-v1/nxos/bootcamp/nxos-02")
     logger.info(data)
 
