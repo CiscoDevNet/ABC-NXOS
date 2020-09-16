@@ -1,0 +1,8 @@
+---
+# ansible-vault encrypt_string --vault-id vault_pass.txt 'cisco' --name 'ansible_user'
+ansible_user: cisco
+
+# ansible-vault encrypt_string --vault-id vault_pass.txt 'cisco' --name 'ansible_password'
+ansible_password: cisco
+
+ansible_network_os: nxos

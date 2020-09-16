@@ -1,0 +1,27 @@
+- name: Playbook to Enable NX-OS features 
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+
+  tasks:
+  - name: Create loopback interface
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: loopback 0
+        description: Configured by Ansible
+        enabled: true
+      state: merged
+
+  - name: Set interface IPv4 address
+    cisco.nxos.nxos_l3_interface:
+      name: loopback 0
+      ipv4: "{{ loopback_ip }}"
+      state: present
+
+  - name: Add OSPF route to interface
+    cisco.nxos.nxos_interface_ospf:
+      interface: loopback 0
+      ospf: '1'
+      area: 0.0.0.0
+      state: present
