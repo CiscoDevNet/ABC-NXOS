@@ -1,6 +1,6 @@
 ---
 
-- name: Playbook to Enable NX-OS features 
+- name: List NXOS VLANs
   hosts: all
   gather_facts: no
   vars:

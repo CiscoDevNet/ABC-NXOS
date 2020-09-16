@@ -1,24 +1,24 @@
 ---
 
-- name: Playbook to Enable NX-OS features 
+- name: Playbook to Configure interfaces for BGP and Configure BGP
   hosts: all
   gather_facts: false
   vars:
     ansible_connection: network_cli
 
   tasks:
-  - name: Create loopback interface
+  - name: Create interface
     cisco.nxos.nxos_interfaces:
       config:
-      - name: loopback 1
-        description: To Advertise over BGP
+      - name: "{{ bgp_interface }}"
+        description: "{{ bgp_interface }} To Advertise over BGP"
         enabled: true
       state: merged
     tags: interface
 
   - name: Set interface IPv4 address
     cisco.nxos.nxos_l3_interface:
-      name: loopback 1
+      name: "{{ bgp_interface }}"
       ipv4: "{{ loopback1_ip }}"
       state: present
     tags: interface, interface_ip
@@ -44,7 +44,7 @@
       asn: "{{ router_bgp }}"
       neighbor: "{{ bgp_neighbor }}"
       remote_as: "{{ bgp_remote_as }}"
-      update_source: loopback0
+      update_source: "{{ bgp_update_source }}"
       connected_check: yes
       ebgp_multihop: '10'
       state: present
