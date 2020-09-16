@@ -16,7 +16,7 @@
   - name: Set interface IPv4 address
     cisco.nxos.nxos_l3_interface:
       name: loopback 0
-      ipv4: "{{ loopback_ip }}"
+      ipv4: "{{ loopback0_ip }}"
       state: present
 
   - name: Add OSPF route to interface

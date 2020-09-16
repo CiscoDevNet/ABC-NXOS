@@ -1,2 +1,7 @@
 ---
-loopback_ip: 192.168.0.1/32
+loopback0_ip: 192.168.0.1/32
+loopback1_ip: 192.168.1.1/32
+router_bgp: '65531'
+bgp_router_id: 1.1.1.1
+bgp_neighbor: 192.168.0.2
+bgp_remote_as: '65532'
