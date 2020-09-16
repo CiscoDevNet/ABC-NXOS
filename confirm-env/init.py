@@ -19,7 +19,7 @@ if __name__ == "__main__":
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     ch.setFormatter(formatter)
     logger.addHandler(ch)
-    
+    logger.debug(args) 
     # Initialize the HVAC client
     logger.debug("initializing hvac client")
     client = hvac.Client(args.vault, args.vault_token)
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     # Create default policy --- this is hardcoded for kv-v1 secret engines
     # TODO: support dynamic paths
     admin_policy = """
-    path "kv-v1/nxos/bootcamp" {
+    path "kv-v1/nxos/bootcamp/*" {
         capabilities = ["create", "read", "update", "delete", "list"]
     }
     """
@@ -65,7 +65,4 @@ if __name__ == "__main__":
     appclient.write("kv-v1/nxos/bootcamp/nxos-01", NXOS_USERNAME="admin", NXOS_PASSWORD="admin")
     appclient.write("kv-v1/nxos/bootcamp/nxos-02", NXOS_USERNAME="admin", NXOS_PASSWORD="admin")
     logger.info("vault_client_token=%s", approle["auth"]["client_token"])
-    logger.info("vault_mount_path=%s", "kv-v1/nxos/bootcamp/nxos-01")
-    logger.info("vault_mount_path=%s", "kv-v1/nxos/bootcamp/nxos-02")
-
-
+    logger.info("vault_mount_path=%s", "kv-v1/nxos/bootcamp/*")
