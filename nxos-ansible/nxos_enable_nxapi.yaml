@@ -1,4 +1,5 @@
 ---
+
 - name: Playbook to Enable NX-API
   hosts: all
   gather_facts: no

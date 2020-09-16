@@ -1,3 +1,5 @@
+---
+
 - name: Playbook to Enable NX-OS features via httpapi
   hosts: all
   gather_facts: no
