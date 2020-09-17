@@ -1,0 +1,9 @@
+---
+version: '1.2'
+action: configure_ospf
+ip: 10.10.20.178
+items:
+    - ospf_interface: loopback 0
+      ospf_number: '1'
+      ospf_area: 0.0.0.0
+      loopback0_ip: 192.168.0.2/32
