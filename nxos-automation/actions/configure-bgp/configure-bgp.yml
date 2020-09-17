@@ -1,0 +1,98 @@
+---
+
+- name: Playbook to unconfigure interfaces for BGP and unconfigure BGP
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+
+  tasks:
+  - name: Delete interface
+    loop: "{{ configure_bgp }}"
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: "{{ item.nxos_bgp_interface }}"
+      state: deleted
+    tags: interface
+
+  - name: Remove interface IPv4 address
+    loop: "{{ configure_bgp }}"
+    cisco.nxos.nxos_l3_interface:
+      name: "{{ item.nxos_bgp_interface }}"
+      ipv4: "{{ item.nxos_loopback1_ip }}"
+      state: absent
+    tags: interface, interface_ip
+
+  - name: Unconfigure a simple ASN
+    loop: "{{ configure_bgp }}"
+    cisco.nxos.nxos_bgp:
+      asn: "{{ item.nxos_router_bgp }}"
+      state: absent
+    tags: bgp
+
+
+- name: Playbook to Configure interfaces for BGP and Configure BGP
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+
+  tasks:
+  - name: Create interface
+    loop: "{{ configure_bgp }}"
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: "{{ item.nxos_bgp_interface }}"
+        description: "{{ item.nxos_bgp_interface }} To Advertise over BGP"
+        enabled: true
+      state: merged
+    tags: interface
+    
+  - name: Set interface IPv4 address
+    loop: "{{ configure_bgp }}"
+    cisco.nxos.nxos_l3_interface:
+      name: "{{ item.nxos_bgp_interface }}"
+      ipv4: "{{ item.nxos_loopback1_ip }}"
+      state: present
+    tags: interface, interface_ip
+
+  - name: Configure a simple ASN
+    loop: "{{ configure_bgp }}"
+    cisco.nxos.nxos_bgp:
+      asn: "{{ item.nxos_router_bgp }}"
+      router_id: "{{ item.nxos_bgp_router_id }}"
+      state: present
+    tags: bgp
+
+  - name: Configure BGP Address Family
+    loop: "{{ configure_bgp }}"
+    cisco.nxos.nxos_bgp_af:
+      asn: "{{ item.nxos_router_bgp }}"
+      afi: ipv4
+      safi: unicast
+      networks: "{{ item.nxos_loopback1_ip }}"
+      state: present
+    tags: bgp, bgp_af
+
+  - name: Configure BGP Neighbor
+    loop: "{{ configure_bgp }}"
+    cisco.nxos.nxos_bgp_neighbor:
+      asn: "{{ item.nxos_router_bgp }}"
+      neighbor: "{{ item.nxos_bgp_neighbor }}"
+      remote_as: "{{ item.nxos_bgp_remote_as }}"
+      update_source: "{{ item.nxos_bgp_update_source }}"
+      connected_check: yes
+      ebgp_multihop: '10'
+      state: present
+    tags: bgp, bgp_neighbor
+
+  - name: Configure BGP Neighbor Address Family
+    loop: "{{ configure_bgp }}"
+    cisco.nxos.nxos_bgp_neighbor_af:
+      asn: "{{ item.nxos_router_bgp }}"
+      neighbor: "{{ item.nxos_bgp_neighbor }}"
+      afi: ipv4
+      safi: unicast
+      next_hop_self: yes
+      state: present
+    tags: bgp, bgp_neighbor_af

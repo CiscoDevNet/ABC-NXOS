@@ -1,0 +1,14 @@
+---
+
+# ansible-vault encrypt_string --vault-id vault_pass.txt 'cisco' --name 'ansible_user'
+ansible_user: cisco
+
+# ansible-vault encrypt_string --vault-id vault_pass.txt 'cisco' --name 'ansible_password'
+ansible_password: cisco
+
+ansible_network_os: nxos
+
+# OSPF Settings
+ospf_interface: loopback 0
+ospf_number: '1'
+ospf_area: 0.0.0.0

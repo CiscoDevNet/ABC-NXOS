@@ -1,0 +1,29 @@
+---
+
+- name: Playbook to unconfigure interfaces for BGP and unconfigure BGP
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+
+  tasks:
+  - name: Delete interface
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: "{{ bgp_interface }}"
+      state: deleted
+    tags: interface
+
+  - name: Remove interface IPv4 address
+    cisco.nxos.nxos_l3_interface:
+      name: "{{ bgp_interface }}"
+      ipv4: "{{ loopback1_ip }}"
+      state: absent
+    tags: interface, interface_ip
+
+  - name: Unconfigure a simple ASN
+    cisco.nxos.nxos_bgp:
+      asn: "{{ router_bgp }}"
+      state: absent
+    tags: bgp
+

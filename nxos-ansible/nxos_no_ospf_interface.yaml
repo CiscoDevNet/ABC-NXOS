@@ -1,0 +1,27 @@
+---
+
+- name: Playbook to unconfigure interfaces and remove OSPF
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+
+  tasks:
+  - name: Remove OSPF route from interface
+    cisco.nxos.nxos_interface_ospf:
+      interface: "{{ ospf_interface }}"
+      ospf: "{{ ospf_number }}"
+      area: "{{ ospf_area }}"
+      state: absent
+
+  - name: Unconfigure interface
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: "{{ ospf_interface }}"
+      state: deleted
+
+  - name: Remove interface IPv4 address
+    cisco.nxos.nxos_l3_interface:
+      name: "{{ ospf_interface }}"
+      ipv4: "{{ loopback0_ip }}"
+      state: present

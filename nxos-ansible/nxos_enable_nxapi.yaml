@@ -1,0 +1,15 @@
+---
+
+- name: Playbook to Enable NX-API
+  hosts: all
+  gather_facts: no
+  vars:
+    ansible_connection: network_cli
+
+  tasks:
+  - name: Enable Feature NX-API
+    cisco.nxos.nxos_nxapi:
+        enable_http: yes
+        http_port: 80
+        enable_https: yes
+        https_port: 443

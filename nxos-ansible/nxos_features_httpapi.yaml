@@ -1,0 +1,16 @@
+---
+
+- name: Playbook to Enable NX-OS features via httpapi
+  hosts: all
+  gather_facts: no
+  vars:
+    ansible_connection: httpapi
+
+  tasks:
+    - name: Enable Features
+      cisco.nxos.nxos_feature:
+        feature: "{{ item }}"
+        state: enabled
+      loop:
+        - interface-vlan
+        - bgp

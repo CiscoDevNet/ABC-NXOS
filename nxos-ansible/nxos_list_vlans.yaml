@@ -1,0 +1,16 @@
+---
+
+- name: List NXOS VLANs
+  hosts: all
+  gather_facts: no
+  vars:
+    ansible_connection: httpapi
+
+  tasks:
+    - name: Gather all legacy facts
+      cisco.nxos.nxos_facts:
+        gather_subset: legacy
+      register: nxos_facts
+
+    - debug:
+        var: nxos_facts['ansible_facts']['ansible_net_vlan_list']
