@@ -13,7 +13,7 @@ nc_payload = """ <config>
   <ospf-items>
     <inst-items>
       <Inst-list>
-        <name>1</name>
+        <name>10</name>
         <dom-items>
           <Dom-list>
             <name>default</name>
