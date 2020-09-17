@@ -7,7 +7,7 @@ loopback = {
   "id": "lo152",
   "ip": "8.8.8.8/32",
   "description": "ADDED VIA NETCONF",
-  "process": "1",
+  "process": "10",
   "area": "0.0.0.0",
 }
 
