@@ -8,6 +8,6 @@ items:
       router_bgp: '65532'
       bgp_router_id: 2.2.2.2
       bgp_neighbor: 192.168.0.1
-      bgp_remote_as: '65531'
+      bgp_remote_as: '6'
       bgp_interface: loopback 1
       bgp_update_source: loopback0
