@@ -1,0 +1,16 @@
+---
+
+- name: Playbook for cisco.nxos.nxos_command
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+  
+  tasks:
+  - name: run show version on remote devices
+    cisco.nxos.nxos_command:
+      commands: show version
+    register: nxos_version
+
+  - debug:
+      var: nxos_version

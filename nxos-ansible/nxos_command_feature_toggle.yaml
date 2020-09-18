@@ -1,0 +1,56 @@
+---
+
+- name: Playbook for cisco.nxos.nxos_command
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+    feature: private-vlan
+  
+  tasks:
+  # What is the current feature setting
+  - name: run show feature | grep {{ feature }}
+    cisco.nxos.nxos_command:
+      commands: show feature | grep {{ feature }}
+    register: nxos_feature_current
+
+  - debug:
+      var: nxos_feature_current['stdout'][0]
+
+  # Enable the feature if it is disabled
+  - name: run configure commands
+    block:
+      - name: enable feature {{ feature }}
+        cisco.nxos.nxos_command:
+          commands:
+            - configure terminal
+            - command: feature {{ feature }}
+
+      # What is the updated setting
+      - name: run show feature | grep {{ feature }}
+        cisco.nxos.nxos_command:
+          commands: show feature | grep {{ feature }}
+        register: nxos_feature_updated
+
+      - debug:
+          var: nxos_feature_updated['stdout'][0]
+    when: " 'disabled' in nxos_feature_current['stdout'][0]"
+
+  # Disable the feature if it is enabled
+  - name: run configure commands
+    block:
+      - name: disable feature {{ feature }}
+        cisco.nxos.nxos_command:
+          commands:
+            - configure terminal
+            - command: no feature {{ feature }}
+
+      # What is the updated setting
+      - name: run show feature | grep {{ feature }}
+        cisco.nxos.nxos_command:
+          commands: show feature | grep {{ feature }}
+        register: nxos_feature_updated
+
+      - debug:
+          var: nxos_feature_updated['stdout'][0]
+    when: " 'enabled' in nxos_feature_current['stdout'][0]"
