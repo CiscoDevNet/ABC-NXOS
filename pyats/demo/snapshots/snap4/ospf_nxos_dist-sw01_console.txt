@@ -1,0 +1,601 @@
++++ dist-sw01: executing command 'show feature' +++
+show feature
+Feature Name          Instance  State   
+--------------------  --------  --------
+Flexlink               1          disabled
+analytics              1          disabled
+bash-shell             1          disabled
+bfd                    1          disabled
+bgp                    1          disabled
+bulkstat               1          disabled
+cable-management       1          disabled
+catena                 1          disabled
+container-tracker      1          disabled
+macsec                 1          disabled
+dhcp                   1          disabled
+dot1x                  1          disabled
+eigrp                  1          disabled
+eigrp                  2          disabled
+eigrp                  3          disabled
+eigrp                  4          disabled
+eigrp                  5          disabled
+eigrp                  6          disabled
+eigrp                  7          disabled
+eigrp                  8          disabled
+eigrp                  9          disabled
+eigrp                  10         disabled
+eigrp                  11         disabled
+eigrp                  12         disabled
+eigrp                  13         disabled
+eigrp                  14         disabled
+eigrp                  15         disabled
+eigrp                  16         disabled
+eth-port-sec           1          disabled
+evb                    1          disabled
+evc                    1          disabled
+evmed                  1          disabled
+fabric-access          1          disabled
+fabric_mcast           1          disabled
+grpc                   1          disabled
+hardware-telemetry     1          disabled
+hmm                    1          disabled
+hsrp_engine            1          enabled 
+icam                   1          disabled
+imp                    1          disabled
+interface-vlan         1          enabled 
+isis                   1          disabled
+isis                   2          disabled
+isis                   3          disabled
+isis                   4          disabled
+isis                   5          disabled
+isis                   6          disabled
+isis                   7          disabled
+isis                   8          disabled
+isis                   9          disabled
+isis                   10         disabled
+isis                   11         disabled
+isis                   12         disabled
+isis                   13         disabled
+isis                   14         disabled
+isis                   15         disabled
+isis                   16         disabled
+itd                    1          disabled
+l2vpn                  1          disabled
+l3vpn                  1          disabled
+lacp                   1          enabled 
+ldap                   1          disabled
+ldp                    1          disabled
+license-smart          1          disabled
+lldp                   1          disabled
+mpls-evpn              1          disabled
+mpls_oam               1          disabled
+mpls_static            1          disabled
+msdp                   1          disabled
+mvrp                   1          disabled
+nat                    1          disabled
+nbm                    1          disabled
+netconf                1          disabled
+ngmvpn                 1          disabled
+ngoam                  1          disabled
+npiv                   1          disabled
+nve                    1          disabled
+nxapi                  1          disabled
+nxsdk_app1             1          disabled
+nxsdk_app10            1          disabled
+nxsdk_app11            1          disabled
+nxsdk_app12            1          disabled
+nxsdk_app13            1          disabled
+nxsdk_app14            1          disabled
+nxsdk_app15            1          disabled
+nxsdk_app16            1          disabled
+nxsdk_app17            1          disabled
+nxsdk_app18            1          disabled
+nxsdk_app19            1          disabled
+nxsdk_app2             1          disabled
+nxsdk_app20            1          disabled
+nxsdk_app21            1          disabled
+nxsdk_app22            1          disabled
+nxsdk_app23            1          disabled
+nxsdk_app24            1          disabled
+nxsdk_app25            1          disabled
+nxsdk_app26            1          disabled
+nxsdk_app27            1          disabled
+nxsdk_app28            1          disabled
+nxsdk_app29            1          disabled
+nxsdk_app3             1          disabled
+nxsdk_app30            1          disabled
+nxsdk_app31            1          disabled
+nxsdk_app32            1          disabled
+nxsdk_app4             1          disabled
+nxsdk_app5             1          disabled
+nxsdk_app6             1          disabled
+nxsdk_app7             1          disabled
+nxsdk_app8             1          disabled
+nxsdk_app9             1          disabled
+nxsdk_mgr              1          disabled
+onep                   1          disabled
+openflow               1          disabled
+ospf                   1          enabled 
+ospf                   2          enabled(not-running)
+ospf                   3          enabled(not-running)
+ospf                   4          enabled(not-running)
+ospf                   5          enabled(not-running)
+ospf                   6          enabled(not-running)
+ospf                   7          enabled(not-running)
+ospf                   8          enabled(not-running)
+ospf                   9          enabled(not-running)
+ospf                   10         enabled(not-running)
+ospf                   11         enabled(not-running)
+ospf                   12         enabled(not-running)
+ospf                   13         enabled(not-running)
+ospf                   14         enabled(not-running)
+ospf                   15         enabled(not-running)
+ospf                   16         enabled(not-running)
+ospfv3                 1          disabled
+ospfv3                 2          disabled
+ospfv3                 3          disabled
+ospfv3                 4          disabled
+ospfv3                 5          disabled
+ospfv3                 6          disabled
+ospfv3                 7          disabled
+ospfv3                 8          disabled
+ospfv3                 9          disabled
+ospfv3                 10         disabled
+ospfv3                 11         disabled
+ospfv3                 12         disabled
+ospfv3                 13         disabled
+ospfv3                 14         disabled
+ospfv3                 15         disabled
+ospfv3                 16         disabled
+pbr                    1          disabled
+pim                    1          disabled
+pim6                   1          disabled
+plb                    1          disabled
+poe                    1          disabled
+private-vlan           1          disabled
+privilege              1          disabled
+ptp                    1          disabled
+restconf               1          disabled
+rip                    1          disabled
+rip                    2          disabled
+rip                    3          disabled
+rip                    4          disabled
+rise                   1          disabled
+scheduler              1          disabled
+scpServer              1          disabled
+segment-routing        1          disabled
+sflow                  1          disabled
+sftpServer             1          disabled
+sla_responder          1          disabled
+sla_sender             1          disabled
+sla_twamp              1          disabled
+smart-channel          1          disabled
+srte                   1          disabled
+sshServer              1          enabled 
+tacacs                 1          disabled
+telemetry              1          disabled
+telnetServer           1          enabled 
+tunnel                 1          disabled
+udld                   1          disabled
+vmtracker              1          disabled
+vni                    1          disabled
+vnseg_vlan             1          disabled
+vpc                    1          enabled 
+vrrp                   1          disabled
+vrrpv3                 1          disabled
+vtp                    1          disabled
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf vrf all' +++
+show ip ospf vrf all
+
+ Routing Process 1 with ID 172.16.101.2 VRF default
+ Routing Process Instance Number 1
+ Stateful High Availability enabled
+ Graceful-restart is configured
+   Grace period: 60 state: Inactive 
+   Last graceful restart exit status: None
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Administrative distance 110
+ Reference Bandwidth is 40000 Mbps
+ SPF throttling delay time of 200.000 msecs,
+   SPF throttling hold time of 1000.000 msecs, 
+   SPF throttling maximum wait time of 5000.000 msecs
+ LSA throttling start time of 0.000 msecs,
+   LSA throttling hold interval of 5000.000 msecs, 
+   LSA throttling maximum wait time of 5000.000 msecs
+ Minimum LSA arrival 1000.000 msec
+ LSA group pacing timer 10 secs
+ Maximum paths to destination 8
+ Number of external LSAs 0, checksum sum 0
+ Number of opaque AS LSAs 0, checksum sum 0
+ Number of areas is 1, 1 normal, 0 stub, 0 nssa
+ Number of active areas is 1, 1 normal, 0 stub, 0 nssa
+ Install discard route for summarized external routes.
+ Install discard route for summarized internal routes.
+ Default Passive Interface is enabled
+   Area BACKBONE(0.0.0.0) 
+        Area has existed for 00:19:59
+        Interfaces in this area: 7 Active interfaces: 3
+        Passive interfaces: 5  Loopback interfaces: 0
+        No authentication available
+        SPF calculation has run 12 times
+         Last SPF ran for 0.000841s
+        Area ranges are
+        Number of LSAs: 9, checksum sum 0x3eea0
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf mpls ldp interface vrf all' +++
+show ip ospf mpls ldp interface vrf all
+Vlan101 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State DR, Network type BROADCAST
+Vlan102 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State DOWN, Network type BROADCAST
+Vlan103 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State DOWN, Network type BROADCAST
+Vlan104 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State DOWN, Network type BROADCAST
+Vlan105 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State DOWN, Network type BROADCAST
+Ethernet1/4 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State BDR, Network type BROADCAST
+Ethernet1/3 - Process ID 1 VRF default, area 0.0.0.0
+    LDP Autoconfig not enabled
+    LDP Sync not enabled, not required
+    State BDR, Network type BROADCAST
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf database router detail vrf all' +++
+show ip ospf database router detail vrf all
+        OSPF Router with ID (172.16.101.2) (Process ID 1 VRF default)
+
+                Router Link States (Area 0.0.0.0)
+
+   LS age: 25
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Router Links
+   Link State ID: 172.16.101.2 
+   Advertising Router: 172.16.101.2
+   LS Seq Number: 0x80000006
+   Checksum: 0x0454
+   Length: 60
+    Number of links: 3
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 172.16.101.0
+      (Link Data) Network Mask: 255.255.255.0
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.6
+      (Link Data) Router Interface address: 172.16.252.5
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.2
+      (Link Data) Router Interface address: 172.16.252.1
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+   LS age: 1140
+   Options: 0x2 (No TOS-capability, No DC)
+   LS Type: Router Links
+   Link State ID: 172.16.101.3 
+   Advertising Router: 172.16.101.3
+   LS Seq Number: 0x80000005
+   Checksum: 0xc273
+   Length: 60
+    Number of links: 3
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 172.16.102.0
+      (Link Data) Network Mask: 255.255.255.0
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.14
+      (Link Data) Router Interface address: 172.16.252.13
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.10
+      (Link Data) Router Interface address: 172.16.252.9
+       Number of TOS metrics: 0
+         TOS   0 Metric: 40
+
+   LS age: 22
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Router Links
+   Link State ID: 172.16.252.25 
+   Advertising Router: 172.16.252.25
+   LS Seq Number: 0x80000036
+   Checksum: 0x9b4b
+   Length: 84
+    Number of links: 5
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.18
+      (Link Data) Router Interface address: 172.16.252.17
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.10
+      (Link Data) Router Interface address: 172.16.252.10
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.2
+      (Link Data) Router Interface address: 172.16.252.2
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 172.16.252.24
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 172.16.252.20
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+   LS age: 21
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Router Links
+   Link State ID: 172.16.252.33 
+   Advertising Router: 172.16.252.33
+   LS Seq Number: 0x8000003a
+   Checksum: 0x466b
+   Length: 84
+    Number of links: 5
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.18
+      (Link Data) Router Interface address: 172.16.252.18
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.14
+      (Link Data) Router Interface address: 172.16.252.14
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Transit Network
+      (Link ID) Designated Router address: 172.16.252.6
+      (Link Data) Router Interface address: 172.16.252.6
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 172.16.252.32
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+     Link connected to: a Stub Network
+      (Link ID) Network/Subnet Number: 172.16.252.28
+      (Link Data) Network Mask: 255.255.255.252
+       Number of TOS metrics: 0
+         TOS   0 Metric: 1
+
+
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf database network detail vrf all' +++
+show ip ospf database network detail vrf all
+        OSPF Router with ID (172.16.101.2) (Process ID 1 VRF default)
+
+                Network Link States (Area 0.0.0.0)
+
+   LS age: 31
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 172.16.252.2 (Designated Router address)
+   Advertising Router: 172.16.252.25
+   LS Seq Number: 0x80000001
+   Checksum: 0x882f
+   Length: 32
+   Network Mask: /30
+         Attached Router: 172.16.252.25
+         Attached Router: 172.16.101.2
+
+   LS age: 31
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 172.16.252.6 (Designated Router address)
+   Advertising Router: 172.16.252.33
+   LS Seq Number: 0x80000001
+   Checksum: 0x8023
+   Length: 32
+   Network Mask: /30
+         Attached Router: 172.16.252.33
+         Attached Router: 172.16.101.2
+
+   LS age: 1140
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 172.16.252.10 (Designated Router address)
+   Advertising Router: 172.16.252.25
+   LS Seq Number: 0x80000001
+   Checksum: 0x4668
+   Length: 32
+   Network Mask: /30
+         Attached Router: 172.16.252.25
+         Attached Router: 172.16.101.3
+
+   LS age: 1141
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 172.16.252.14 (Designated Router address)
+   Advertising Router: 172.16.252.33
+   LS Seq Number: 0x80000001
+   Checksum: 0x3e5c
+   Length: 32
+   Network Mask: /30
+         Attached Router: 172.16.252.33
+         Attached Router: 172.16.101.3
+
+   LS age: 209
+   Options: 0x22 (No TOS-capability, DC)
+   LS Type: Network Links
+   Link State ID: 172.16.252.18 (Designated Router address)
+   Advertising Router: 172.16.252.33
+   LS Seq Number: 0x80000023
+   Checksum: 0xb90d
+   Length: 32
+   Network Mask: /30
+         Attached Router: 172.16.252.33
+         Attached Router: 172.16.252.25
+
+
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf database summary detail vrf all' +++
+show ip ospf database summary detail vrf all
+        OSPF Router with ID (172.16.101.2) (Process ID 1 VRF default)
+
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf database external detail vrf all' +++
+show ip ospf database external detail vrf all
+        OSPF Router with ID (172.16.101.2) (Process ID 1 VRF default)
+
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf database opaque-area detail vrf all' +++
+show ip ospf database opaque-area detail vrf all
+        OSPF Router with ID (172.16.101.2) (Process ID 1 VRF default)
+
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf virtual-links vrf all' +++
+show ip ospf virtual-links vrf all
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf interface vrf all' +++
+show ip ospf interface vrf all
+ Vlan105 is up, line protocol is down
+    IP address 172.16.105.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State DOWN, Network type BROADCAST, cost 40
+    Index 5, Passive interface
+ Vlan104 is up, line protocol is down
+    IP address 172.16.104.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State DOWN, Network type BROADCAST, cost 40
+    Index 4, Passive interface
+ Vlan103 is up, line protocol is down
+    IP address 172.16.103.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State DOWN, Network type BROADCAST, cost 40
+    Index 3, Passive interface
+ Vlan102 is up, line protocol is down
+    IP address 172.16.102.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State DOWN, Network type BROADCAST, cost 40
+    Index 2, Passive interface
+ Vlan101 is up, line protocol is up
+    IP address 172.16.101.2/24
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State DR, Network type BROADCAST, cost 40
+    Index 1, Passive interface
+ Ethernet1/3 is up, line protocol is up
+    IP address 172.16.252.1/30
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State BDR, Network type BROADCAST, cost 40
+    Index 7, Transmit delay 1 sec, Router Priority 1
+    Designated Router ID: 172.16.252.25, address: 172.16.252.2
+    Backup Designated Router ID: 172.16.101.2, address: 172.16.252.1
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:02
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+ Ethernet1/4 is up, line protocol is up
+    IP address 172.16.252.5/30
+    Process ID 1 VRF default, area 0.0.0.0
+    Enabled by interface configuration
+    State BDR, Network type BROADCAST, cost 40
+    Index 6, Transmit delay 1 sec, Router Priority 1
+    Designated Router ID: 172.16.252.33, address: 172.16.252.6
+    Backup Designated Router ID: 172.16.101.2, address: 172.16.252.5
+    1 Neighbors, flooding to 1, adjacent with 1
+    Timer intervals: Hello 10, Dead 40, Wait 40, Retransmit 5
+      Hello timer due in 00:00:04
+    No authentication
+    Number of opaque link LSAs: 0, checksum sum 0
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf neighbors detail vrf all' +++
+show ip ospf neighbors detail vrf all
+ Neighbor 172.16.252.25, interface address 172.16.252.2
+    Process ID 1 VRF default, in area 0.0.0.0 via interface Ethernet1/3
+    State is FULL, 6 state changes, last change 00:00:32
+    Neighbor priority is 1
+    DR is 172.16.252.2 BDR is 172.16.252.1
+    We are slave in DBD exchange, seqnr 0x1a3c , all DBDs sent and acked
+    Hello options 0x12, dbd options 0x52
+    Last non-hello packet received 00:00:23
+      Dead timer due in 00:00:30
+      DBD rxmit timer due in 00:00:07
+ Neighbor 172.16.252.33, interface address 172.16.252.6
+    Process ID 1 VRF default, in area 0.0.0.0 via interface Ethernet1/4
+    State is FULL, 6 state changes, last change 00:00:32
+    Neighbor priority is 1
+    DR is 172.16.252.6 BDR is 172.16.252.5
+    We are slave in DBD exchange, seqnr 0xf42 , all DBDs sent and acked
+    Hello options 0x12, dbd options 0x52
+    Last non-hello packet received 00:00:23
+      Dead timer due in 00:00:36
+      DBD rxmit timer due in 00:00:09
+
+dist-sw01# 
++++ dist-sw01: executing command 'show ip ospf sham-links vrf all' +++
+show ip ospf sham-links vrf all
+                         ^
+% Invalid command at '^' marker.
+dist-sw01# 
+Could not learn <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfShamLinks'>
+Invalid command has been executed
++====================================================================================================================================================+
+| Commands for learning feature 'Ospf'                                                                                                               |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.nxos.show_feature.ShowFeature'>                                                                                   |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspf'>, arguments: {'vrf':'all'}                                                             |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfMplsLdpInterface'>, arguments: {'interface':'','vrf':'all'}                              |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseRouterDetail'>, arguments: {'vrf':'all'}                                         |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseNetworkDetail'>, arguments: {'vrf':'all'}                                        |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseSummaryDetail'>, arguments: {'vrf':'all'}                                        |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseExternalDetail'>, arguments: {'vrf':'all'}                                       |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseOpaqueAreaDetail'>, arguments: {'vrf':'all'}                                     |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfInterface'>, arguments: {'interface':'','vrf':'all'}                                     |
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfNeighborDetail'>, arguments: {'neighbor':'','vrf':'all'}                                 |
+|====================================================================================================================================================|
+| - Commands not accepted on the device                                                                                                              |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfShamLinks'>, arguments: {'vrf':'all'}                                                    |
+|====================================================================================================================================================|
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.nxos.show_ospf.ShowIpOspfVirtualLinks'>, arguments: {'vrf':'all'}                                                 |
+|====================================================================================================================================================|

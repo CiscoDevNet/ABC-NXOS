@@ -1,0 +1,691 @@
++++ dist-rtr02: executing command 'show ip ospf' +++
+show ip ospf
+ Routing Process "ospf 1" with ID 172.16.252.33
+ Start time: 00:02:31.624, Time elapsed: 17:55:16.489
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ Supports Link-local Signaling (LLS)
+ Supports area transit capability
+ Supports NSSA (compatible with RFC 3101)
+ Supports Database Exchange Summary List Optimization (RFC 5243)
+ Event-log enabled, Maximum number of events: 1000, Mode: cyclic
+ Router is not originating router-LSAs with maximum metric
+ Initial SPF schedule delay 50 msecs
+ Minimum hold time between two consecutive SPFs 200 msecs
+ Maximum wait time between two consecutive SPFs 5000 msecs
+ Incremental-SPF disabled
+ Initial LSA throttle delay 50 msecs
+ Minimum hold time for LSA throttle 200 msecs
+ Maximum wait time for LSA throttle 5000 msecs
+ Minimum LSA arrival 100 msecs
+ LSA group pacing timer 240 secs
+ Interface flood pacing timer 33 msecs
+ Retransmission pacing timer 66 msecs
+ EXCHANGE/LOADING adjacency limit: initial 300, process maximum 300
+ Number of external LSA 0. Checksum Sum 0x000000
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ Number of areas transit capable is 0
+ External flood list length 0
+ IETF NSF helper support enabled
+ Cisco NSF helper support enabled
+ Reference bandwidth unit is 100 mbps
+    Area BACKBONE(0)
+        Number of interfaces in this area is 5
+	Area has no authentication
+	SPF algorithm last executed 00:00:17.856 ago
+	SPF algorithm executed 42 times
+	Area ranges are
+	Number of LSA 9. Checksum Sum 0x03EEA0
+	Number of opaque link LSA 0. Checksum Sum 0x000000
+	Number of DCbitless LSA 2
+	Number of indication LSA 0
+	Number of DoNotAge LSA 0
+	Flood list length 0
+
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip protocols' +++
+show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is "application"
+  Sending updates every 0 seconds
+  Invalid after 0 seconds, hold down 0, flushed after 0
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Maximum path: 32
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 4)
+
+Routing Protocol is "ospf 1"
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 172.16.252.33
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    172.16.252.0 0.0.3.255 area 0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+    172.16.252.25        110      14:27:58
+    172.16.101.3         110      00:18:59
+    172.16.101.2         110      00:00:26
+  Distance: (default is 110)
+
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf mpls ldp interface' +++
+show ip ospf mpls ldp interface
+GigabitEthernet6
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+GigabitEthernet5
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+GigabitEthernet4
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+GigabitEthernet3
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+GigabitEthernet2
+  Process ID 1, Area 0
+  LDP is not configured through LDP autoconfig
+  LDP-IGP Synchronization : Not required
+  Holddown timer is disabled
+  Interface is up 
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf mpls traffic-eng link' +++
+show ip ospf mpls traffic-eng link
+
+            OSPF Router with ID (172.16.252.33) (Process ID 1)
+
+  Area 0 MPLS TE not initialized
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf database router' +++
+show ip ospf database router
+
+            OSPF Router with ID (172.16.252.33) (Process ID 1)
+
+		Router Link States (Area 0)
+
+  LS age: 31
+  Options: (No TOS-capability, No DC)
+  LS Type: Router Links
+  Link State ID: 172.16.101.2
+  Advertising Router: 172.16.101.2
+  LS Seq Number: 80000006
+  Checksum: 0x454
+  Length: 60
+  Number of Links: 3
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 172.16.101.0
+     (Link Data) Network Mask: 255.255.255.0
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.6
+     (Link Data) Router Interface address: 172.16.252.5
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.2
+     (Link Data) Router Interface address: 172.16.252.1
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+
+  LS age: 1144
+  Options: (No TOS-capability, No DC)
+  LS Type: Router Links
+  Link State ID: 172.16.101.3
+  Advertising Router: 172.16.101.3
+  LS Seq Number: 80000005
+  Checksum: 0xC273
+  Length: 60
+  Number of Links: 3
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 172.16.102.0
+     (Link Data) Network Mask: 255.255.255.0
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.14
+     (Link Data) Router Interface address: 172.16.252.13
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.10
+     (Link Data) Router Interface address: 172.16.252.9
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 40
+
+
+  LS age: 27
+  Options: (No TOS-capability, DC)
+  LS Type: Router Links
+  Link State ID: 172.16.252.25
+  Advertising Router: 172.16.252.25
+  LS Seq Number: 80000036
+  Checksum: 0x9B4B
+  Length: 84
+  Number of Links: 5
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.18
+     (Link Data) Router Interface address: 172.16.252.17
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.10
+     (Link Data) Router Interface address: 172.16.252.10
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.2
+     (Link Data) Router Interface address: 172.16.252.2
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 172.16.252.24
+     (Link Data) Network Mask: 255.255.255.252
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 172.16.252.20
+     (Link Data) Network Mask: 255.255.255.252
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+
+  LS age: 25
+  Options: (No TOS-capability, DC)
+  LS Type: Router Links
+  Link State ID: 172.16.252.33
+  Advertising Router: 172.16.252.33
+  LS Seq Number: 8000003A
+  Checksum: 0x466B
+  Length: 84
+  Number of Links: 5
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.18
+     (Link Data) Router Interface address: 172.16.252.18
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.14
+     (Link Data) Router Interface address: 172.16.252.14
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Transit Network
+     (Link ID) Designated Router address: 172.16.252.6
+     (Link Data) Router Interface address: 172.16.252.6
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 172.16.252.32
+     (Link Data) Network Mask: 255.255.255.252
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+    Link connected to: a Stub Network
+     (Link ID) Network/subnet number: 172.16.252.28
+     (Link Data) Network Mask: 255.255.255.252
+      Number of MTID metrics: 0
+       TOS 0 Metrics: 1
+
+
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf database network' +++
+show ip ospf database network
+
+            OSPF Router with ID (172.16.252.33) (Process ID 1)
+
+		Net Link States (Area 0)
+
+  LS age: 36
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 172.16.252.2 (address of Designated Router)
+  Advertising Router: 172.16.252.25
+  LS Seq Number: 80000001
+  Checksum: 0x882F
+  Length: 32
+  Network Mask: /30
+	Attached Router: 172.16.252.25
+	Attached Router: 172.16.101.2
+
+  LS age: 35
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 172.16.252.6 (address of Designated Router)
+  Advertising Router: 172.16.252.33
+  LS Seq Number: 80000001
+  Checksum: 0x8023
+  Length: 32
+  Network Mask: /30
+	Attached Router: 172.16.252.33
+	Attached Router: 172.16.101.2
+
+  LS age: 1146
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 172.16.252.10 (address of Designated Router)
+  Advertising Router: 172.16.252.25
+  LS Seq Number: 80000001
+  Checksum: 0x4668
+  Length: 32
+  Network Mask: /30
+	Attached Router: 172.16.252.25
+	Attached Router: 172.16.101.3
+
+  LS age: 1143
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 172.16.252.14 (address of Designated Router)
+  Advertising Router: 172.16.252.33
+  LS Seq Number: 80000001
+  Checksum: 0x3E5C
+  Length: 32
+  Network Mask: /30
+	Attached Router: 172.16.252.33
+	Attached Router: 172.16.101.3
+
+  LS age: 213
+  Options: (No TOS-capability, DC)
+  LS Type: Network Links
+  Link State ID: 172.16.252.18 (address of Designated Router)
+  Advertising Router: 172.16.252.33
+  LS Seq Number: 80000023
+  Checksum: 0xB90D
+  Length: 32
+  Network Mask: /30
+	Attached Router: 172.16.252.33
+	Attached Router: 172.16.252.25
+
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf database external' +++
+show ip ospf database external
+
+            OSPF Router with ID (172.16.252.33) (Process ID 1)
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf database summary' +++
+show ip ospf database summary
+
+            OSPF Router with ID (172.16.252.33) (Process ID 1)
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf database opaque-area' +++
+show ip ospf database opaque-area
+
+            OSPF Router with ID (172.16.252.33) (Process ID 1)
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf virtual-links' +++
+show ip ospf virtual-links
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf interface' +++
+show ip ospf interface
+GigabitEthernet6 is up, line protocol is up 
+  Internet Address 172.16.252.18/30, Interface ID 12, Area 0
+  Attached via Network Statement
+  Process ID 1, Router ID 172.16.252.33, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 172.16.252.33, Interface address 172.16.252.18
+  Backup Designated router (ID) 172.16.252.25, Interface address 172.16.252.17
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:07
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/5/5, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 4
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 172.16.252.25  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+GigabitEthernet5 is up, line protocol is up 
+  Internet Address 172.16.252.14/30, Interface ID 11, Area 0
+  Attached via Network Statement
+  Process ID 1, Router ID 172.16.252.33, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 172.16.252.33, Interface address 172.16.252.14
+  Backup Designated router (ID) 172.16.101.3, Interface address 172.16.252.13
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:03
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/4/4, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 4
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 172.16.101.3  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+GigabitEthernet4 is up, line protocol is up 
+  Internet Address 172.16.252.6/30, Interface ID 10, Area 0
+  Attached via Network Statement
+  Process ID 1, Router ID 172.16.252.33, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 172.16.252.33, Interface address 172.16.252.6
+  Backup Designated router (ID) 172.16.101.2, Interface address 172.16.252.5
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:08
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/3/3, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 4
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 172.16.101.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+GigabitEthernet3 is up, line protocol is up 
+  Internet Address 172.16.252.33/30, Interface ID 9, Area 0
+  Attached via Network Statement
+  Process ID 1, Router ID 172.16.252.33, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 172.16.252.33, Interface address 172.16.252.33
+  No backup designated router on this network
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:08
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/2/2, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 0, maximum is 0
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 0, Adjacent neighbor count is 0 
+  Suppress hello for 0 neighbor(s)
+GigabitEthernet2 is up, line protocol is up 
+  Internet Address 172.16.252.29/30, Interface ID 8, Area 0
+  Attached via Network Statement
+  Process ID 1, Router ID 172.16.252.33, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 172.16.252.33, Interface address 172.16.252.29
+  No backup designated router on this network
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:05
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/1/1, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 0, maximum is 0
+  Last flood scan time is 0 msec, maximum is 0 msec
+  Neighbor Count is 0, Adjacent neighbor count is 0 
+  Suppress hello for 0 neighbor(s)
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf neighbor detail' +++
+show ip ospf neighbor detail
+ Neighbor 172.16.252.25, interface address 172.16.252.17, interface-id 12
+    In the area 0 via interface GigabitEthernet6
+    Neighbor priority is 1, State is FULL, 6 state changes
+    DR is 172.16.252.18 BDR is 172.16.252.17
+    Options is 0x12 in Hello (E-bit, L-bit)
+    Options is 0x52 in DBD (E-bit, L-bit, O-bit)
+    LLS Options is 0x1 (LR)
+    Dead timer due in 00:00:33
+    Neighbor is up for 14:28:09
+    Index 1/2/2, retransmission queue length 0, number of retransmission 0
+    First 0x0(0)/0x0(0)/0x0(0) Next 0x0(0)/0x0(0)/0x0(0)
+    Last retransmission scan length is 0, maximum is 0
+    Last retransmission scan time is 0 msec, maximum is 0 msec
+ Neighbor 172.16.101.3, interface address 172.16.252.13
+    In the area 0 via interface GigabitEthernet5
+    Neighbor priority is 1, State is FULL, 6 state changes
+    DR is 172.16.252.14 BDR is 172.16.252.13
+    Options is 0x2 in Hello (E-bit)
+    Options is 0x42 in DBD (E-bit, O-bit)
+    Dead timer due in 00:00:38
+    Neighbor is up for 00:19:10
+    Index 1/3/3, retransmission queue length 0, number of retransmission 0
+    First 0x0(0)/0x0(0)/0x0(0) Next 0x0(0)/0x0(0)/0x0(0)
+    Last retransmission scan length is 0, maximum is 0
+    Last retransmission scan time is 0 msec, maximum is 0 msec
+ Neighbor 172.16.101.2, interface address 172.16.252.5
+    In the area 0 via interface GigabitEthernet4
+    Neighbor priority is 1, State is FULL, 6 state changes
+    DR is 172.16.252.6 BDR is 172.16.252.5
+    Options is 0x2 in Hello (E-bit)
+    Options is 0x42 in DBD (E-bit, O-bit)
+    Dead timer due in 00:00:34
+    Neighbor is up for 00:00:42
+    Index 1/1/1, retransmission queue length 0, number of retransmission 1
+    First 0x0(0)/0x0(0)/0x0(0) Next 0x0(0)/0x0(0)/0x0(0)
+    Last retransmission scan length is 1, maximum is 1
+    Last retransmission scan time is 1 msec, maximum is 1 msec
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf interface GigabitEthernet6' +++
+show ip ospf interface GigabitEthernet6
+GigabitEthernet6 is up, line protocol is up 
+  Internet Address 172.16.252.18/30, Interface ID 12, Area 0
+  Attached via Network Statement
+  Process ID 1, Router ID 172.16.252.33, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 172.16.252.33, Interface address 172.16.252.18
+  Backup Designated router (ID) 172.16.252.25, Interface address 172.16.252.17
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:02
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/5/5, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 4
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 172.16.252.25  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf interface GigabitEthernet5' +++
+show ip ospf interface GigabitEthernet5
+GigabitEthernet5 is up, line protocol is up 
+  Internet Address 172.16.252.14/30, Interface ID 11, Area 0
+  Attached via Network Statement
+  Process ID 1, Router ID 172.16.252.33, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 172.16.252.33, Interface address 172.16.252.14
+  Backup Designated router (ID) 172.16.101.3, Interface address 172.16.252.13
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:08
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/4/4, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 4
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 172.16.101.3  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf interface GigabitEthernet4' +++
+show ip ospf interface GigabitEthernet4
+GigabitEthernet4 is up, line protocol is up 
+  Internet Address 172.16.252.6/30, Interface ID 10, Area 0
+  Attached via Network Statement
+  Process ID 1, Router ID 172.16.252.33, Network Type BROADCAST, Cost: 1
+  Topology-MTID    Cost    Disabled    Shutdown      Topology Name
+        0           1         no          no            Base
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 172.16.252.33, Interface address 172.16.252.6
+  Backup Designated router (ID) 172.16.101.2, Interface address 172.16.252.5
+  Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit 5
+    oob-resync timeout 40
+    Hello due in 00:00:01
+  Supports Link-local Signaling (LLS)
+  Cisco NSF helper support enabled
+  IETF NSF helper support enabled
+  Can be protected by per-prefix Loop-Free FastReroute
+  Can be used for per-prefix Loop-Free FastReroute repair paths
+  Not Protected by per-prefix TI-LFA
+  Index 1/3/3, flood queue length 0
+  Next 0x0(0)/0x0(0)/0x0(0)
+  Last flood scan length is 1, maximum is 4
+  Last flood scan time is 0 msec, maximum is 1 msec
+  Neighbor Count is 1, Adjacent neighbor count is 1 
+    Adjacent with neighbor 172.16.101.2  (Backup Designated Router)
+  Suppress hello for 0 neighbor(s)
+dist-rtr02#
++++ dist-rtr02: executing command 'show running-config | section router ospf 1' +++
+show running-config | section router ospf 1
+router ospf 1
+ no log-adjacency-changes
+ network 172.16.252.0 0.0.3.255 area 0
+dist-rtr02#
++++ dist-rtr02: executing command 'show ip ospf sham-links' +++
+show ip ospf sham-links
+dist-rtr02#
+Could not learn <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfShamLinks'>
+Show Command: show ip ospf sham-links
+Parser Output is empty
++====================================================================================================================================================+
+| Commands for learning feature 'Ospf'                                                                                                               |
++====================================================================================================================================================+
+| - Parsed commands                                                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspf'>                                                                                      |
+|   cmd: <class 'genie.libs.parser.iosxe.show_protocols.ShowIpProtocols'>, arguments: {'vrf':''}                                                     |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfMplsLdpInterface'>, arguments: {'interface':''}                                         |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfMplsTrafficEngLink'>                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfDatabaseRouter'>                                                                        |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfDatabaseNetwork'>                                                                       |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfDatabaseExternal'>                                                                      |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfDatabaseSummary'>                                                                       |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfDatabaseOpaqueArea'>                                                                    |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfInterface'>, arguments: {'interface':''}                                                |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfNeighborDetail'>, arguments: {'neighbor':''}                                            |
+|====================================================================================================================================================|
+| - Commands with empty output                                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfVirtualLinks'>                                                                          |
+|   cmd: <class 'genie.libs.parser.iosxe.show_ospf.ShowIpOspfShamLinks'>                                                                             |
+|====================================================================================================================================================|

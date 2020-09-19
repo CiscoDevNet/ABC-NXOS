@@ -1,0 +1,54 @@
+
+2020-09-19 14:23:41,212: %UNICON-INFO: +++ dist-sw02 logfile snap1/connection_dist-sw02.txt +++
+
+2020-09-19 14:23:41,212: %UNICON-INFO: +++ Unicon plugin nxos +++
+User Access Verification
+
+
+2020-09-19 14:23:43,722: %UNICON-INFO: +++ connection to spawn: ssh -l cisco 10.10.20.178 -p 22, id: 4417791032 +++
+
+2020-09-19 14:23:43,723: %UNICON-INFO: connection to dist-sw02
+Password: 
+
+Cisco NX-OS Software
+Copyright (c) 2002-2019, Cisco Systems, Inc. All rights reserved.
+Nexus 9000v software ("Nexus 9000v Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the Nexus 9000v Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  Nexus 9000v is strictly limited to use for evaluation, demonstration   *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the Nexus 9000v Software or Documentation to any third party for any   *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+dist-sw02# 
+
+2020-09-19 14:23:45,117: %UNICON-INFO: +++ initializing handle +++
+
+2020-09-19 14:23:45,117: %UNICON-INFO: +++ dist-sw02: executing command 'term length 0' +++
+term length 0
+dist-sw02# 
+
+2020-09-19 14:23:45,325: %UNICON-INFO: +++ dist-sw02: executing command 'term width 511' +++
+term width 511
+dist-sw02# 
+
+2020-09-19 14:23:45,537: %UNICON-INFO: +++ dist-sw02: executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+dist-sw02# 
