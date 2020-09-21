@@ -12,3 +12,10 @@ ansible_network_os: nxos
 ospf_interface: loopback 0
 ospf_number: '1'
 ospf_area: 0.0.0.0
+
+vlan_106_id: 106
+vlan_106_name: ansible
+vlan_106_descr: ansible svi
+
+hsrp_area: '10'
+hsrp_vip: 172.16.106.1

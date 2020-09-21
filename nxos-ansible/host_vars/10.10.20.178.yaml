@@ -7,3 +7,5 @@ bgp_router_id: 2.2.2.2
 bgp_neighbor: 192.168.0.1
 bgp_remote_as: '65531'
 bgp_update_source: loopback0
+
+vlan_106_ip: 172.16.106.3/24

@@ -1,0 +1,22 @@
+---
+
+- name: Playbook to unconfigure VLAN interfaces for OSPF and HSRP
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+
+  tasks:
+  - name: Delete VLAN
+    cisco.nxos.nxos_vlans:
+      config:
+      - vlan_id: "{{ vlan_106_id }}"
+      state: deleted
+
+  - name: Delete interface
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: "Vlan{{ vlan_106_id }}"
+      state: deleted
+
+

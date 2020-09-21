@@ -1,0 +1,46 @@
+---
+
+- name: Playbook to Configure VLAN interfaces for OSPF and HSRP
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+
+  tasks:
+  - name: Create VLAN
+    cisco.nxos.nxos_vlans:
+      config:
+      - vlan_id: "{{ vlan_106_id }}"
+        name: "{{ vlan_106_name }}"
+      state: merged
+
+  - name: sleep for 10 seconds and continue with play
+    wait_for:
+      timeout: 10
+
+  - name: Create interface
+    cisco.nxos.nxos_interfaces:
+      config:
+      - name: "Vlan{{ vlan_106_id }}"
+        description: "{{ vlan_106_descr }}"
+        enabled: True
+      state: merged
+
+  - name: Set interface IPv4 address
+    cisco.nxos.nxos_l3_interface:
+      name: "vlan{{ vlan_106_id }}"
+      ipv4: "{{ vlan_106_ip }}"
+      state: present
+
+  - name: Add OSPF route to interface
+    cisco.nxos.nxos_interface_ospf:
+      interface: "Vlan{{ vlan_106_id }}"
+      ospf: "{{ ospf_number }}"
+      area: "{{ ospf_area }}"
+      state: present
+
+  - name: Ensure HSRP is configured with following params on a SVI
+    cisco.nxos.nxos_hsrp:
+      group: "{{ hsrp_area }}"
+      vip: "{{ hsrp_vip }}"
+      interface: "vlan{{ vlan_106_id }}"
