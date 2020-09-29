@@ -11,7 +11,7 @@
     cisco.nxos.nxos_command:
       commands:
       - show version
-      - show interfaces
+      - show interface
     register: nxos_version_interfaces
 
   - debug:

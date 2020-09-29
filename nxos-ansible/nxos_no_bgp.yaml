@@ -12,18 +12,24 @@
       config:
       - name: "{{ bgp_interface }}"
       state: deleted
-    tags: interface
+    tags: no_interface
+
+  - name: run configure commands
+    cisco.nxos.nxos_command:
+      commands:
+      - configure terminal
+      - command: no interface {{ bgp_interface }}
+    tags: no_interface
 
   - name: Remove interface IPv4 address
-    cisco.nxos.nxos_l3_interface:
-      name: "{{ bgp_interface }}"
-      ipv4: "{{ loopback1_ip }}"
-      state: absent
-    tags: interface, interface_ip
+    cisco.nxos.nxos_l3_interfaces:
+      config:
+        - name: "{{ bgp_interface }}"
+      state: deleted
+    tags: no_l3_interface
 
   - name: Unconfigure a simple ASN
     cisco.nxos.nxos_bgp:
       asn: "{{ router_bgp }}"
       state: absent
-    tags: bgp
-
+    tags: no_bgp

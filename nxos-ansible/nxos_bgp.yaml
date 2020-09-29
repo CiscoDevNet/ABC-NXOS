@@ -17,11 +17,13 @@
     tags: interface
 
   - name: Set interface IPv4 address
-    cisco.nxos.nxos_l3_interface:
-      name: "{{ bgp_interface }}"
-      ipv4: "{{ loopback1_ip }}"
-      state: present
-    tags: interface, interface_ip
+    cisco.nxos.nxos_l3_interfaces:
+      config:
+        - name: "{{ bgp_interface }}"
+          ipv4:
+          - address: "{{ loopback1_ip }}"
+      state: merged
+    tags: interface, ipv4
 
   - name: Configure a simple ASN
     cisco.nxos.nxos_bgp:

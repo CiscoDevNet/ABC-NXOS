@@ -1,10 +1,14 @@
 ---
 
+# Run command
+# ansible-playbook -i hosts.yaml nxos_list_vlans.yaml --ask-vault-pass --extra-vars "con_var=httpapi"​
+# ansible-playbook -i hosts.yaml nxos_list_vlans.yaml --vault-password-file vault_pass.txt --extra-vars "con_var=network_cli"
+
 - name: List NXOS VLANs
   hosts: all
   gather_facts: no
   vars:
-    ansible_connection: httpapi
+    ansible_connection: "{{ con_var }}"
 
   tasks:
     - name: Gather all legacy facts

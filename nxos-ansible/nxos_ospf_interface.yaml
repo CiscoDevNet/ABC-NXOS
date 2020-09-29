@@ -15,11 +15,23 @@
         enabled: true
       state: merged
 
+  # The enabled: true in the task about should add "no shutdown" to the config
+  # however it is not. This config command was added to ensure "no shutdown" on
+  # the interface.
+  - name: run configure commands
+    cisco.nxos.nxos_command:
+      commands:
+      - configure terminal
+      - command: interface {{ ospf_interface }}
+      - command: no shutdown
+
   - name: Set interface IPv4 address
-    cisco.nxos.nxos_l3_interface:
-      name: "{{ ospf_interface }}"
-      ipv4: "{{ loopback0_ip }}"
-      state: present
+    cisco.nxos.nxos_l3_interfaces:
+      config:
+        - name: "{{ ospf_interface }}"
+          ipv4:
+            - address: "{{ loopback0_ip }}"
+      state: merged
 
   - name: Add OSPF route to interface
     cisco.nxos.nxos_interface_ospf:

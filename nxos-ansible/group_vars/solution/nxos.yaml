@@ -22,7 +22,7 @@ ansible_password: !vault |
 ansible_network_os: nxos
 
 # OSPF Settings
-ospf_interface: loopback 0
+ospf_interface: loopback0
 ospf_number: '1'
 ospf_area: 0.0.0.0
 
