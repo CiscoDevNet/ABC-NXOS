@@ -25,7 +25,12 @@ devices:
     type: nxos
 ```
 
-Run the following command to help you to create it
+Run the following command to help you to create it with Multiplatform Network devices
+Incase you make a mistake 
+
+```
+  mv testbed.yaml testbedold.yaml
+```
 
 ```
 pyats create testbed interactive --output testbed.yaml
@@ -48,7 +53,7 @@ pyats parse "show version" --testbed-file testbed.yaml --output snap1
 ```python
 from genie.testbed import load
 tb = load('testbed.yaml')
-dev = tb.devices['nx-osv-1']
+dev = tb.devices['dist-rtr01']
 dev.connect()
 # Let's send a command to the device
 output = dev.execute('show bgp process vrf all')
