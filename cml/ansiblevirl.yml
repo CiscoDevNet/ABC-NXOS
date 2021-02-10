@@ -1,0 +1,48 @@
+---
+- name: Playbook to Configure interfaces for BGP and Configure BGP
+  hosts: cml_testdevice
+  connection: local
+  gather_facts: false
+  vars:
+    virl_username: developer
+    virl_password: C1sco12345
+    virl_host: 10.10.20.161
+    virl_lab: ansiblelab
+    virl_lab_file: ExampleNetwork.yaml
+  
+  tasks:
+    - name: Create the lab
+      virl_lab:
+        host: "{{ virl_host }}"
+        user: "{{ virl_username }}"
+        password: "{{ virl_password }}"
+        lab: "{{ virl_lab }}"
+        state: present
+        file: "{{ virl_lab_file }}"
+      register: results
+
+    
+    - name: Collect Facts
+      virl_lab_facts:
+        host: "{{ virl_host }}"
+        user: "{{ virl_username }}"
+        password: "{{ virl_password }}"
+        lab: "{{ virl_lab }}"
+      register: result
+
+    - name: Print Lab 
+      debug:
+        msg: "{{ result }}"
+
+    - name: Start Node
+      virl_node:
+        name: "{{ inventory_hostname }}"
+        host: "{{ virl_host }}"
+        user: "{{ virl_username }}"
+        password: "{{ virl_password }}"
+        lab: "{{ virl_lab }}"
+        state: started
+        image_definition: "{{ virl_image_definition | default(omit) }}"
+        config: "{{ day0_config | default(omit) }}"
+
+    
