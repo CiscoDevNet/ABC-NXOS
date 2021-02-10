@@ -43,7 +43,7 @@ Testbed file contains many other features, but let's keep at this for now.
 
 Once we have our Testbed file, let's connect to our device
 
-pyats parse "show version" --testbed-file testbed-file.yaml --output snap1
+pyats parse "show version" --testbed-file testbed.yaml --output snap1
 
 ```python
 from genie.testbed import load
