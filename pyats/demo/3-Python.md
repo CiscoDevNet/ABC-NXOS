@@ -50,7 +50,7 @@ dev.connect()
 
 # Let's send a configuration to the device
 configuration = '''\
-interface Ethernet2/1
+interface Ethernet1/5
 shutdown'''
 
 output = dev.configure(configuration)
