@@ -18,7 +18,9 @@ Let's investigate
 
 pyats parse "show version" --testbed-file testbed.yaml --output snap1
 pyats learn "ospf" --testbed-file testbed.yaml --output snap1
-Make A config change to dist-sw01 that effects OSPF
+
+* Make A config change to dist-sw01 that effects OSPF
+
 pyats learn "ospf" --testbed-file testbed.yaml --output snap2
 
 pyats diff snap1 snap2
