@@ -10,3 +10,4 @@ test:
         - pyats/pre_snapshots/TaskLog.job.html
         - pyats/post_snapshots/TaskLog.job.html
         when: always
+        #test
