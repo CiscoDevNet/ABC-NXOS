@@ -1,0 +1,178 @@
+[2021-02-10 11:41:17,522] +++ dist-sw01 logfile snap1/connection_dist-sw01.txt +++
+[2021-02-10 11:41:17,522] +++ Unicon plugin nxos +++
+Warning: Permanently added '10.10.20.177' (RSA) to the list of known hosts.
+
+[2021-02-10 11:41:18,705] +++ connection to spawn: ssh -l cisco 10.10.20.177, id: 140114964314880 +++
+[2021-02-10 11:41:18,706] connection to dist-sw01
+User Access Verification
+Password: 
+
+Cisco NX-OS Software
+Copyright (c) 2002-2019, Cisco Systems, Inc. All rights reserved.
+Nexus 9000v software ("Nexus 9000v Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the Nexus 9000v Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  Nexus 9000v is strictly limited to use for evaluation, demonstration   *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the Nexus 9000v Software or Documentation to any third party for any   *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+dist-sw01# 
+[2021-02-10 11:41:19,468] +++ initializing handle +++
+[2021-02-10 11:41:19,469] +++ dist-sw01: executing command 'term length 0' +++
+term length 0
+dist-sw01# 
+[2021-02-10 11:41:19,562] +++ dist-sw01: executing command 'term width 511' +++
+term width 511
+dist-sw01# 
+[2021-02-10 11:41:19,641] +++ dist-sw01: executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+dist-sw01# 
+[2021-02-10 11:41:20,988] +++ dist-sw01: executing command 'show version' +++
+show version
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2019, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained herein are owned by
+other third parties and are used and distributed under license.
+Some parts of this software are covered under the GNU Public
+License. A copy of the license is available at
+http://www.gnu.org/licenses/gpl.html.
+
+Nexus 9000v is a demo version of the Nexus Operating System
+
+Software
+  BIOS: version 
+ NXOS: version 9.2(3)
+  BIOS compile time:  
+  NXOS image file is: bootflash:///nxos.9.2.3.bin
+  NXOS compile time:  2/17/2019 5:00:00 [02/17/2019 15:07:27]
+
+
+Hardware
+  cisco Nexus9000 9000v Chassis 
+  Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz with 8163960 kB of memory.
+  Processor Board ID 9D2KF6DA0MZ
+
+  Device name: dist-sw01
+  bootflash:    3509454 kB
+Kernel uptime is 0 day(s), 2 hour(s), 57 minute(s), 14 second(s)
+
+Last reset 
+  Reason: Unknown
+  System version: 
+  Service: 
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+Active Package(s):
+        
+dist-sw01# 
+[2021-02-10 12:10:24,697] +++ dist-sw01 logfile snap1/connection_dist-sw01.txt +++
+[2021-02-10 12:10:24,697] +++ Unicon plugin nxos +++
+Warning: Permanently added '10.10.20.177' (RSA) to the list of known hosts.
+
+[2021-02-10 12:10:24,866] +++ connection to spawn: ssh -l cisco 10.10.20.177 -p 22, id: 139836530155760 +++
+[2021-02-10 12:10:24,866] connection to dist-sw01
+User Access Verification
+Password: 
+
+Cisco NX-OS Software
+Copyright (c) 2002-2019, Cisco Systems, Inc. All rights reserved.
+Nexus 9000v software ("Nexus 9000v Software") and related documentation,
+files or other reference materials ("Documentation") are
+the proprietary property and confidential information of Cisco
+Systems, Inc. ("Cisco") and are protected, without limitation,
+pursuant to United States and International copyright and trademark
+laws in the applicable jurisdiction which provide civil and criminal
+penalties for copying or distribution without Cisco's authorization.
+
+Any use or disclosure, in whole or in part, of the Nexus 9000v Software
+or Documentation to any third party for any purposes is expressly
+prohibited except as otherwise authorized by Cisco in writing.
+The copyrights to certain works contained herein are owned by other
+third parties and are used and distributed under license. Some parts
+of this software may be covered under the GNU Public License or the
+GNU Lesser General Public License. A copy of each such license is
+available at
+http://www.gnu.org/licenses/gpl.html and
+http://www.gnu.org/licenses/lgpl.html
+***************************************************************************
+*  Nexus 9000v is strictly limited to use for evaluation, demonstration   *
+*  and NX-OS education. Any use or disclosure, in whole or in part of     *
+*  the Nexus 9000v Software or Documentation to any third party for any   *
+*  purposes is expressly prohibited except as otherwise authorized by     *
+*  Cisco in writing.                                                      *
+***************************************************************************
+dist-sw01# 
+[2021-02-10 12:10:25,455] +++ initializing handle +++
+[2021-02-10 12:10:25,456] +++ dist-sw01: executing command 'term length 0' +++
+term length 0
+dist-sw01# 
+[2021-02-10 12:10:25,538] +++ dist-sw01: executing command 'term width 511' +++
+term width 511
+dist-sw01# 
+[2021-02-10 12:10:25,617] +++ dist-sw01: executing command 'terminal session-timeout 0' +++
+terminal session-timeout 0
+dist-sw01# 
+[2021-02-10 12:10:25,705] +++ dist-sw01: executing command 'show version' +++
+show version
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2019, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained herein are owned by
+other third parties and are used and distributed under license.
+Some parts of this software are covered under the GNU Public
+License. A copy of the license is available at
+http://www.gnu.org/licenses/gpl.html.
+
+Nexus 9000v is a demo version of the Nexus Operating System
+
+Software
+  BIOS: version 
+ NXOS: version 9.2(3)
+  BIOS compile time:  
+  NXOS image file is: bootflash:///nxos.9.2.3.bin
+  NXOS compile time:  2/17/2019 5:00:00 [02/17/2019 15:07:27]
+
+
+Hardware
+  cisco Nexus9000 9000v Chassis 
+  Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz with 8163960 kB of memory.
+  Processor Board ID 9D2KF6DA0MZ
+
+  Device name: dist-sw01
+  bootflash:    3509454 kB
+Kernel uptime is 0 day(s), 3 hour(s), 26 minute(s), 19 second(s)
+
+Last reset 
+  Reason: Unknown
+  System version: 
+  Service: 
+
+plugin
+  Core Plugin, Ethernet Plugin
+
+Active Package(s):
+        
+dist-sw01# 
