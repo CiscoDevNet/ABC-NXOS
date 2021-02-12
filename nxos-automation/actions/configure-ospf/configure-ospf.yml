@@ -1,7 +1,7 @@
 ---
 
 - name: Playbook to unconfigure interfaces and remove OSPF
-  hosts: all
+  hosts: nxos
   gather_facts: false
   vars:
     ansible_connection: network_cli
@@ -13,25 +13,22 @@
       ospf: "{{ item.nxos_ospf_number }}"
       area: "{{ item.nxos_ospf_area }}"
       state: absent
-  - name: Unconfigure interface
-    loop: "{{ configure_ospf }}"
-    cisco.nxos.nxos_interfaces:
-      config:
-      - name: "{{ item.nxos_ospf_interface }}"
-      state: deleted
-  - name: Remove interface IPv4 address
-    loop: "{{ configure_ospf }}"
-    cisco.nxos.nxos_l3_interface:
-      name: "{{ item.nxos_ospf_interface }}"
-      ipv4: "{{ item.nxos_loopback0_ip }}"
-      state: present
+  
 
 - name: Playbook to Configure interfaces for OSPF
-  hosts: all
+  hosts: nxos
   gather_facts: false
   vars:
     ansible_connection: network_cli
   tasks:
+  - name: CONFIGURE OSPF PROCESS ID AND AREA AND ROUTER ID
+    cisco.nxos.nxos_config:
+      lines:
+        - 'router-id {{ router_id }}'
+      parents: 'router ospf {{ ospf_process_id }}'
+      before: 'no router ospf {{ ospf_process_id }}'
+  
+  
   - name: Create interface
     loop: "{{ configure_ospf }}"
     cisco.nxos.nxos_interfaces:
@@ -45,7 +42,7 @@
     loop: "{{ configure_ospf }}"
     cisco.nxos.nxos_l3_interface:
       name: "{{ item.nxos_ospf_interface }}"
-      ipv4: "{{ item.nxos_loopback0_ip }}"
+      ipv4: "{{ item.nxos_ip }}"
       state: present
 
   - name: Add OSPF route to interface
