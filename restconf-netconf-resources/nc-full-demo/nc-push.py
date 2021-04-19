@@ -1,14 +1,17 @@
 #! /usr/bin/env python
 """
+Author: Quinn Snyder <qsnyder@cisco.com>
+nc_push.py
 Simple Python script leveraging `ncclient`, Jinja2 templates, and network state
 as defined in a YAML file declaring intent.
 Python script will generate NETCONF payloads using YAML and J2 for each
 network device.  NETCONF/XML payload will then be applied to each device
 """
 
+__author__ = ("Quinn Snyder")
+__author_email__ = ("qsnyder@cisco.com")
 __copyright__ = "Copyright (c) 2020 Cisco Systems, Inc."
 __license__ = "MIT"
-
 
 import yaml
 from jinja2 import Template
@@ -30,6 +33,13 @@ print("")
 with open("ospf.j2") as f:
     ospf_template = Template(f.read())
 
+# Layer 3 interface configurations
+with open("interfaces.j2") as f:
+    interface_template = Template(f.read())
+
+# Loopback interface configurations
+with open("loopbacks.j2") as f:
+    loopback_template = Template(f.read())
 
 # Loop over network devices to create and deploy network configs
 # based on template + intent
@@ -42,7 +52,10 @@ for device in config["devices"]:
         ospf_config = ospf_template.render(ospf=device["ospf"])
         f.write(ospf_config)
     
-    
+    with open("netconf_configs/{}_loopback.cfg".format(device["name"]), "w") as f:
+        loopbacks = loopback_template.render(loopbacks=device["loopbacks"])
+        f.write(loopbacks)
+
     # Connect to Device with NETCONF
     print("  Connecting to device with NETCONF")
     with manager.connect(host=device["mgmt_address"],
@@ -73,7 +86,3 @@ for device in config["devices"]:
         print("    OSPF Config: {}".format(list(ospf_reply["rpc-reply"].keys())[0]))
         print("      NETCONF Message ID: {}".format(ospf_message_id[2]))
         print("...")
-
-
-        
-
