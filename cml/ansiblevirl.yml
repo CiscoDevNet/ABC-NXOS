@@ -34,15 +34,5 @@
       debug:
         msg: "{{ result }}"
 
-    - name: Start Node
-      virl_node:
-        name: "{{ inventory_hostname }}"
-        host: "{{ virl_host }}"
-        user: "{{ virl_username }}"
-        password: "{{ virl_password }}"
-        lab: "{{ virl_lab }}"
-        state: started
-        image_definition: "{{ virl_image_definition | default(omit) }}"
-        config: "{{ day0_config | default(omit) }}"
-
+    
     
