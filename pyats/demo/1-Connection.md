@@ -56,7 +56,7 @@ tb = load('testbed.yaml')
 dev = tb.devices['dist-rtr01']
 dev.connect()
 # Let's send a command to the device
-output = dev.execute('show bgp process vrf all')
+output = dev.execute('show ip route')
 ```
 
 That is it,  end of the first section. As an exercise; let's add another
