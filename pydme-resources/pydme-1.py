@@ -1,36 +1,20 @@
 from pydme import *
 import time
 
-n9k1 = Node('http://10.10.5.241:8080', verify=False, disableWarnings=True)
-n9k2 = Node('http://10.10.5.242:8080', verify=False, disableWarnings=True)
-n9k3 = Node('http://10.10.5.243:8080', verify=False, disableWarnings=True)
-n9k4 = Node('http://10.10.5.244:8080', verify=False, disableWarnings=True)
+n9k1 = Node('https://10.10.20.58', verify=False, disableWarnings=True)
 
-interfaces = ['eth1/1', 'eth1/2', 'eth1/3']
 
-segments = [['192.168.12.', '192.168.13.', '192.168.14.'], ['192.168.12.', '192.168.23.', '192.168.24.'], ['192.168.13.', '192.168.23.', '192.168.34.'], ['192.168.14.', '192.168.24.', '192.168.34.']]
+interfaces = ['eth1/10', 'eth1/11', 'eth1/12']
+
+segments = [['192.168.12.', '192.168.13.', '192.168.14.']]
 
 switch_mit = []
 
-n9k1.methods.Login('admin', password='admin').POST()
+n9k1.methods.Login('admin', password='Cisco123').POST()
 n1_mit = n9k1.mit
 n1_ts = n1_mit.topSystem()
 switch_mit.append(n1_mit)
 
-n9k2.methods.Login('admin', password='admin').POST()
-n2_mit = n9k2.mit
-n2_ts = n2_mit.topSystem()
-switch_mit.append(n2_mit)
-
-n9k3.methods.Login('admin', password='admin').POST()
-n3_mit = n9k3.mit
-n3_ts = n3_mit.topSystem()
-switch_mit.append(n3_mit)
-
-n9k4.methods.Login('admin', password='admin').POST()
-n4_mit = n9k4.mit
-n4_ts = n4_mit.topSystem()
-switch_mit.append(n4_mit)
 
 for switch in switch_mit:
   ospf_feature = switch.topSystem().fmEntity().fmOspf(adminSt='enabled')
