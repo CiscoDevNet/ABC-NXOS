@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9b225740-c867-4330-ae74-355129517b58",
+		"_postman_id": "c210b393-8058-4dd0-a629-4545fd16262d",
 		"name": "ABC - N9K RESTCONF",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -362,6 +362,45 @@
 			"response": []
 		},
 		{
+			"name": "11. RESTCONF Challenge #2 Modified",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/yang.data+json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/yang.data+json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/ipv4-items/inst-items/dom-items/Dom-list=RESTCONF_TEST/if-items/If-list=eth1%2F10/addr-items",
+					"protocol": "https",
+					"host": [
+						"{{nxos_ip}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"restconf",
+						"data",
+						"Cisco-NX-OS-device:System",
+						"ipv4-items",
+						"inst-items",
+						"dom-items",
+						"Dom-list=RESTCONF_TEST",
+						"if-items",
+						"If-list=eth1%2F10",
+						"addr-items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "12. RESTCONF Challenge #3",
 			"request": {
 				"method": "PATCH",
@@ -416,7 +455,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{  \n    \"ipv4-items\": {\n      \"inst-items\": {\n        \"dom-items\": {\n          \"Dom-list\": [\n            {\n              \"name\": \"RESTCONF\",\n              \"if-items\": {\n                \"If-list\": [\n                  {\n                    \"id\": \"lo150\",\n                    \"addr-items\": {\n                      \"Addr-list\": [\n                        {\n                          \"addr\": \"6.6.6.7/32\"\n                        }\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    },\n    \"intf-items\": {\n      \"lb-items\": {\n        \"LbRtdIf-list\": [\n          {\n            \"adminSt\": \"up\",\n            \"descr\": \"RESTCONF_LOOPBACK_VRF\",\n            \"id\": \"lo150\",\n            \"rtvrfMbr-items\": {\n              \"tDn\": \"/System/inst-items/Inst-list[name='RESTCONF']\"\n            }\n          }\n        ]\n      }\n    }\n  }"
+					"raw": "{  \n    \"ipv4-items\": {\n      \"inst-items\": {\n        \"dom-items\": {\n          \"Dom-list\": [\n            {\n              \"name\": \"RESTCONF_TEST\",\n              \"if-items\": {\n                \"If-list\": [\n                  {\n                    \"id\": \"lo150\",\n                    \"addr-items\": {\n                      \"Addr-list\": [\n                        {\n                          \"addr\": \"6.6.6.7/32\"\n                        }\n                      ]\n                    }\n                  }\n                ]\n              }\n            }\n          ]\n        }\n      }\n    },\n    \"intf-items\": {\n      \"lb-items\": {\n        \"LbRtdIf-list\": [\n          {\n            \"adminSt\": \"up\",\n            \"descr\": \"RESTCONF_LOOPBACK_VRF\",\n            \"id\": \"lo150\",\n            \"rtvrfMbr-items\": {\n              \"tDn\": \"/System/inst-items/Inst-list[name='RESTCONF_TEST']\"\n            }\n          }\n        ]\n      }\n    }\n  }"
 				},
 				"url": {
 					"raw": "https://{{nxos_ip}}:{{port}}/restconf/data/Cisco-NX-OS-device:System/",
@@ -537,7 +576,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d7938860-5add-40fa-a89f-ec3faf5e41fe",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -547,13 +585,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0ceecad2-016b-439a-96e6-f74bd8ca5182",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
