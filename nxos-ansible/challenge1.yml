@@ -1,0 +1,34 @@
+---
+
+  - name: PERFORM COMPLIANCE CHECKS
+    hosts: all
+    connection: network_cli
+    gather_facts: no
+
+    #roles:
+    #- ansible-network.network-engine
+    vars_files:
+      - challenge1vars.yaml #To Do
+    tasks:
+     
+      - name: GATHER SHOW VERSION FOR NXOS DEVICES
+        when:  group_names[0] == "nxos"
+        nxos_command:
+          commands:
+            - show ver
+        register: nx
+            
+      - name: VERIFY OS AND CONFIG REGISTER FOR NXOS DEVICES
+        when:  group_names[0] == "nxos"
+        assert:
+          that:
+            - "'{{ nx_ver }}.bin' in nx['stdout'][0]"
+          success_msg: "Passed! {{ nx_ver }} "
+        with_items: "{{group_names[0]}}"
+
+      
+      - name: Ensure SNMP EXISTS FOR NXOS SWITCHES
+        when: group_names[0] == "nxos"
+        nxos_config:
+          commands:
+            - snmp-server community PUBLIC_SECURITY ro
