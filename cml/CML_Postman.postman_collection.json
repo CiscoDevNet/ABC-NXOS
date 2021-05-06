@@ -1,0 +1,426 @@
+{
+	"info": {
+		"_postman_id": "ed6db748-c16f-4c18-b9a2-39c178069e76",
+		"name": "CML_Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate to the system, get a web token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{username}}\",\n    \"password\": \"{{password}}\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/authenticate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "The response body is a JSON web token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/authenticate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "\"adipisicing aute\""
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/authenticate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": -783662,\n \"description\": \"quis magna\"\n}"
+				},
+				{
+					"name": "Access is denied. The response body is a JSON object of the error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/authenticate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": -783662,\n \"description\": \"quis magna\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get the list of labs.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb20uY2lzY28udmlybCIsImlhdCI6MTYyMDI2MTIyOSwiZXhwIjoxNjIwMzQ3NjI5LCJzdWIiOiIxMDIifQ.QUyWB1Y2sgbPUWsbz_pBz11GuVGlCxVAwH79OyZCPdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/populate_lab_tiles",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"populate_lab_tiles"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/populate_lab_tiles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"populate_lab_tiles"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": -783662,\n \"description\": \"quis magna\"\n}"
+				},
+				{
+					"name": "A JSON object where the keys are the lab IDs and the values are",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/populate_lab_tiles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"populate_lab_tiles"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{}"
+				}
+			]
+		},
+		{
+			"name": "Start the specified lab as a simulation.",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb20uY2lzY28udmlybCIsImlhdCI6MTYyMDI2MTIyOSwiZXhwIjoxNjIwMzQ3NjI5LCJzdWIiOiIxMDIifQ.QUyWB1Y2sgbPUWsbz_pBz11GuVGlCxVAwH79OyZCPdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/labs/:lab_id/start",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"labs",
+						":lab_id",
+						"start"
+					],
+					"variable": [
+						{
+							"key": "lab_id",
+							"value": "cefbcb",
+							"description": "(Required) The unique ID of a lab on this controller."
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Specified lab not found or not allocated to cluster.",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/labs/:lab_id/start",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"labs",
+								":lab_id",
+								"start"
+							],
+							"variable": [
+								{
+									"key": "lab_id"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": -783662,\n \"description\": \"quis magna\"\n}"
+				},
+				{
+					"name": "Success.  It is safe to ignore the response content for now.",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/labs/:lab_id/start",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"labs",
+								":lab_id",
+								"start"
+							],
+							"variable": [
+								{
+									"key": "lab_id"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "\"adipisicing aute\""
+				},
+				{
+					"name": "Cannot start lab.",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/labs/:lab_id/start",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"labs",
+								":lab_id",
+								"start"
+							],
+							"variable": [
+								{
+									"key": "lab_id"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": -783662,\n \"description\": \"quis magna\"\n}"
+				},
+				{
+					"name": "Unexpected error",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: bearer",
+								"key": "Authorization",
+								"value": "Bearer <token>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/labs/:lab_id/start",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"labs",
+								":lab_id",
+								"start"
+							],
+							"variable": [
+								{
+									"key": "lab_id"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"code\": -783662,\n \"description\": \"quis magna\"\n}"
+				}
+			]
+		}
+	]
+}
