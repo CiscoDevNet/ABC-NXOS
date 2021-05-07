@@ -13,7 +13,7 @@ devices:
       router_id: 1.1.1.1
       
   - name: dist-sw02
-    mgmt_address: 10.10.20.177
+    mgmt_address: 10.10.20.178
     netconf_port: 830
     
     ospf:
