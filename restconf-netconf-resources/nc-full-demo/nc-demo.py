@@ -12,19 +12,18 @@ __license__ = "MIT"
 import yaml
 from jinja2 import Template
 from ncclient import manager
-import time #ADDED
-import xmltodict #ADDED
+import time 
+import xmltodict 
 
-print("Gathering intended network configuration from YAML") #ADDED
-with open("intent.yaml") as f: #ADDED
-    config = yaml.safe_load(f.read()) #ADDED
-
+print("Gathering intended network configuration from YAML") 
+with open("intent.yaml") as f: 
+    config = yaml.safe_load(f.read()) 
 with open("ospf.j2") as f:
     ospf_template = Template(f.read())
 # Loop over network devices to create and deploy network configs
 # based on template + intent
-for device in config["devices"]: #ADDED
-    print("Device: {}".format(device["name"])) #ADDED
+for device in config["devices"]: 
+    print("Device: {}".format(device["name"])) 
     with open("netconf_configs/{}_ospf.cfg".format(device["name"]), "w") as f:
         ospf_config = ospf_template.render(ospf=device["ospf"])
         f.write(ospf_config)
@@ -37,8 +36,7 @@ for device in config["devices"]: #ADDED
                          hostkey_verify=False,
                          device_params={'name': 'nexus'},
                          allow_agent=False,
-                         look_for_keys=False) as m: #ADDED INSTEAD OF THE NEXT LINE
-    # with manager.connect(host=device["mgmt_address"]) as m: #REMOVED
+                         look_for_keys=False) as m: 
         print("  Sending NETCONF configuration as <edit-config> operation")
         ospf_response = m.edit_config(ospf_config, target = "running")
         time.sleep(2)
