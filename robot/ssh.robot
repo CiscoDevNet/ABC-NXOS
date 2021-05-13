@@ -25,7 +25,7 @@ Verify Ospf
 
 Verify 5 up interfaces
     ${output}=         Execute Command    show interface brief 
-    Should Contain    ${output}          up    5
+    Should Contain X times   ${output}          up  5   
 
 
 
