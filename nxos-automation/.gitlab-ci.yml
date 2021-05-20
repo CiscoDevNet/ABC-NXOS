@@ -7,7 +7,7 @@ default:
 stages:
   - pyats-pre-snapshot
   - deploy-OSPF
-	pyats-pre-snapshot:
+pyats-pre-snapshot:
   script: cd pyats && pyats run job job.py --testbed-file devnet_sandbox.yaml --trigger-datafile pre_trigger_datafile.yaml --html-logs pre_snapshots
   artifacts:
       paths:
